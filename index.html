@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="pure-min.css">
+    <script src="yui-min.js"></script>
+</head>
+<body>
+    <!--div class="pure-menu pure-menu-open pure-menu-horizontal">
+        <a href="#" class="pure-menu-heading">Civil Engineering Toolbox</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Struktur</a></li>
+            <li><a href="#">Geoteknik</a></li>
+            <li><a href="#">Mekanika</a></li>
+        </ul>
+    </div-->
+
+    <div id="demo-horizontal-menu">
+    <ul id="std-menu-items">
+        <li class="pure-menu-selected"><a href="#">Civil Engineering Toolbox</a></li>
+        <li><a href="#">Struktur</a></li>
+        <li><a href="#">Geoteknik</a></li>
+        <li><a href="#">Mekanika</a>
+            <ul>
+                <!--li class="pure-menu-heading">GEOTEKNIK</li-->
+                <li class="pure-menu-separator"></li>
+                <li><a href="#">Tabel Baja</a></li>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+YUI({
+    classNamePrefix: 'pure'
+}).use('gallery-sm-menu', function (Y) {
+
+    var horizontalMenu = new Y.Menu({
+        container         : '#demo-horizontal-menu',
+        sourceNode        : '#std-menu-items',
+        orientation       : 'horizontal',
+        hideOnOutsideClick: false,
+        hideOnClick       : false
+    });
+
+    horizontalMenu.render();
+    horizontalMenu.show();
+
+});
+</script>
+
+
+
+    <div class="pure-g">
+    </div>
+</body>
+</html>
