@@ -2,6 +2,15 @@
 
 <%block name="content">
     <h4>civil-engineering-toolbox</h4>
+    <p><strong>civil-engineering-toolbox</strong> is collection of small programs to help civil
+    engineer to solve small to medium size and common problems found in
+    engineering world in order to solve the big problems. This software can
+    be used as a problem-solver, reminder (through the shown formula),
+    or to give quick estimation.</p>
+    <p>Website: <a href="https://github.com/dukenmarga/civil-engineering-toolbox">
+            https://github.com/dukenmarga/civil-engineering-toolbox
+    </a>
+    </p>
     <div class="col-md-4">
         <strong>Programmer:</strong>
         <ol>

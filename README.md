@@ -10,6 +10,17 @@ formula), or to give quick estimation.
 Features
 ========
 
+Request for a Feature
+=================
+If you want to request application, you can 
+<a href="https://github.com/dukenmarga/civil-engineering-toolbox/issues/
+new?title=Application%20Request:%20_application_name_" target="_blank">
+create a new issue </a> and describe your application.
+You can send link or reference to the description, algorithm, picture, code, and 
+sample calculation of requested application so I can 
+review it first before creating it.
+Application must be as general as possible and be used by most of civil
+engineers.
 
 Requirement
 ===========

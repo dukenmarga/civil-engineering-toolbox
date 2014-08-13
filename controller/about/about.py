@@ -1,4 +1,3 @@
-import cherrypy
 from src import view
 
 class About:
