@@ -11,7 +11,7 @@ def setup():
         },
         'global' : {
             'server.socket_host' : "0.0.0.0",
-            'server.socket_port' : 8080,
+            'server.socket_port' : 1234,
             'server.log_to_screen' : False,
             'server.show_tracebacks' : False,
             'autoreload.on' : False
