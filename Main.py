@@ -9,6 +9,7 @@ def start():
         router_config = router.setup()
 
         #Append all configurations
+        cherrypy.config.update(global_config)
         global_config.update(router_config)
         cherrypy.tree.mount(None, config=global_config)
 
