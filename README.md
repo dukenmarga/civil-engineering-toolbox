@@ -52,9 +52,6 @@ terminal. If your repository doesn't have package below, you can download them
 manually, extract them, and then install it by invoking `python setup.py install`
 from command line in that extracted directory.
 Ensure you have installed Python setuptools before using the command.
-
-* Python Routes 1.13+ or 2.0+ (https://pypi.python.org/pypi/Routes)
-
 * Install Python 2.7+
 * Install Mako 0.9 or later (http://www.makotemplates.org/)
 * Install CherryPy 3.2 (http://www.cherrypy.org/)
