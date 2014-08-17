@@ -33,7 +33,7 @@ engineers.
 #Installation
 I'm sorry that there are many steps to go through before you can use this
 software. civil-engineering-toolbox depends on some software, especially
-to for web server and templating.
+for interpreter, web server and templating.
 ## Windows 32-bit
 * Download Python 2.7+ (https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi)
 * Download Mako 1.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win32-py2.7.exe)
@@ -51,6 +51,8 @@ to for web server and templating.
 * Happy designing :)
 
 ## Windows 64-bit
+These steps are not tested yet. If you are failed to run the software, just use
+the 32-bit guide above.
 * Download Python 2.7+ (https://www.python.org/ftp/python/2.7.8/python-2.7.8.amd64.msi)
 * Download Mako 1.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win-amd64-py2.7.exe)
 * Download CherryPy 3.2 (http://download.cherrypy.org/cherrypy/3.2.2/CherryPy-3.2.2.win32.exe)
