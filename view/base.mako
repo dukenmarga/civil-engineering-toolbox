@@ -3,7 +3,7 @@
     <head>
         <title>
         <%block name="title">
-            Civil Engineering Toolkit
+            Civil Engineering Toolbox
         </%block>
         </title>
         <!-- CSS -->
