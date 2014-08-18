@@ -39,7 +39,11 @@ for interpreter, web server and templating.
 * Download Mako 1.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win32-py2.7.exe)
 * Download CherryPy 3.2 (http://download.cherrypy.org/cherrypy/3.2.2/CherryPy-3.2.2.win32.exe)
 * Download Setuptools (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/setuptools-5.4.2.win32-py2.7.exe)
-* Install all 4 softwares above in sequence
+* Install all 4 softwares above in sequence. When installing Python, on
+customization option, ensure that you check item "Add python.exe to Path" to
+"Will be installed on local hard drive" (see image below). If you do not enable this option, you
+will not be able to complete the next step. 
+<img src="http://duken.info/cet/img/customize_python.png" align="center" hspace="10" vspace="6">
 * Download Routes 2.0 (http://duken.info/cet/routes/Routes-2.0.zip)
 * Extract and unzip Routes, then double click `install.cmd`
   Please wait until installation has completed. You can safely delete this folder
@@ -57,7 +61,11 @@ the 32-bit guide above.
 * Download Mako 1.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win-amd64-py2.7.exe)
 * Download CherryPy 3.2 (http://download.cherrypy.org/cherrypy/3.2.2/CherryPy-3.2.2.win32.exe)
 * Download Setuptools (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/setuptools-5.4.2.win-amd64-py2.7.exe)
-* Install all 4 softwares above in sequence
+* Install all 4 softwares above in sequence. When installing Python, on
+customization option, ensure that you check item "Add python.exe to Path" to
+"Will be installed on local hard drive" (see image below). If you do not enable this option, you
+will not be able to complete the next step. 
+<img src="http://duken.info/cet/img/customize_python.png" align="center" hspace="10" vspace="6">
 * Download Routes 2.0 (http://duken.info/cet/routes/Routes-2.0.zip)
 * Extract and unzip Routes, then double click `install.cmd`
   Please wait until installation has completed. You can safely delete this folder
