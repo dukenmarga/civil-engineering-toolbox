@@ -1,5 +1,5 @@
 #civil-engineering-toolbox
-civil-engineering-toolbox is collection of small programs to help 
+**civil-engineering-toolbox** is collection of small programs to help 
 civil engineer to solve small to medium size and common problems found in 
 engineering world in order to solve the main problems.
 It is web based application that can be opened in your own browser (offline)
@@ -32,8 +32,10 @@ engineers.
 
 #Installation
 I'm sorry that there are many steps to go through before you can use this
-software. civil-engineering-toolbox depends on some software, especially
-for interpreter, web server and templating.
+software. **civil-engineering-toolbox** depends on some software, especially
+for interpreter, web server and templating. If you are using Windows 7, open all
+of these files as Administrator (right click then choose `Run as Administrator`)
+in case your computer doesn't allow installing program using non-privileged user.
 ## Windows 32-bit
 * Download Python 2.7+ (https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi)
 * Download Mako 1.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win32-py2.7.exe)
@@ -46,7 +48,7 @@ will not be able to complete the next step.
 <img src="http://duken.info/cet/img/customize_python.png" align="center" hspace="10" vspace="6">
 * Download Routes 2.0 (http://duken.info/cet/routes/Routes-2.0.zip)
     * **Connected to internet**. Extract and unzip Routes, then double click `install.cmd`
-      Please wait until installation has completed. If you are connected to internet
+      Please wait until installation has completed. If you are connected to internet,
       Routes will download a file from internet as its
       dependency. If you are offline when installing this, follow the next step.
     * **Offline**. You must download additional file named repoze.lru 
@@ -63,12 +65,12 @@ indication that your program is started correctly.
 
 ## Windows 64-bit
 I'm sorry but it seems that CherryPy installer can not detect Python 64 bit
-on Windows. So, for you that use Windows 64 bit, you can still install using 
+on Windows. So, for you who use Windows 64 bit, you can still install using 
 installation guide for 32 bit above.
 
 ## Linux
 Due to many variant of Linux distribution, here I will summarize steps to install
-civil-engineering-toolbox. I believe that you had already able to use your
+**civil-engineering-toolbox**. I believe that you had already able to use your
 software manager, either by GUI (graphical user interface) or command line from
 terminal. If your repository doesn't have package below, you can download them
 manually, extract them, and then install it by invoking `python setup.py install`
@@ -78,7 +80,7 @@ Ensure you have installed Python setuptools before using the command.
 * Install Mako 0.9 or later (http://www.makotemplates.org/)
 * Install CherryPy 3.2 (http://www.cherrypy.org/)
 * Install Python Routes 1.13+ or 2.0+ (https://pypi.python.org/pypi/Routes)
-* Download civil-engineering-toolbox (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
+* Download **civil-engineering-toolbox** (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
 * Extract and unzip it. Then open terminal and change your directory into it.
 * From terminal invoke `python Main.py`
 * Open your browser to access http://127.0.0.1:1234
