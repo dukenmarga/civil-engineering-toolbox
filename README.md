@@ -28,6 +28,7 @@ engineers.
 * CherryPy 3.2.2 (http://www.cherrypy.org/)
 * Mako 0.9 or later (http://www.makotemplates.org/)
 * Python Routes 1.13+ or 2.0+ (https://pypi.python.org/pypi/Routes)
+* Repoze.lru 0.6 (https://pypi.python.org/pypi/repoze.lru)
 
 #Installation
 I'm sorry that there are many steps to go through before you can use this
@@ -44,36 +45,26 @@ customization option, ensure that you check item "Add python.exe to Path" to
 will not be able to complete the next step. 
 <img src="http://duken.info/cet/img/customize_python.png" align="center" hspace="10" vspace="6">
 * Download Routes 2.0 (http://duken.info/cet/routes/Routes-2.0.zip)
-* Extract and unzip Routes, then double click `install.cmd`
-  Please wait until installation has completed. You can safely delete this folder
-  after completing the installation.
+    * **Connected to internet**. Extract and unzip Routes, then double click `install.cmd`
+      Please wait until installation has completed. If you are connected to internet
+      Routes will download a file from internet as its
+      dependency. If you are offline when installing this, follow the next step.
+    * **Offline**. You must download additional file named repoze.lru 
+      (http://duken.info/cet/repoze.lru/repoze.lru-0.6.zip). After installing
+      Routes above (and failed connected to internet), install repoze.lru
+      after extracting it then double click `install.cmd`.
+  You can safely delete these folders after completing the installation.
 * Download civil-engineering-toolbox (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
 * Extract and unzip it into one of your directory.
-* Double click `Main.py`
+* Double click `Main.py`. A black window will be opened and hang there as an
+indication that your program is started correctly.
 * Open your browser to access http://127.0.0.1:1234
 * Happy designing :)
 
 ## Windows 64-bit
-These steps are not tested yet. If you are failed to run the software, just use
-the 32-bit guide above.
-* Download Python 2.7+ (https://www.python.org/ftp/python/2.7.8/python-2.7.8.amd64.msi)
-* Download Mako 1.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win-amd64-py2.7.exe)
-* Download CherryPy 3.2 (http://download.cherrypy.org/cherrypy/3.2.2/CherryPy-3.2.2.win32.exe)
-* Download Setuptools (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/setuptools-5.4.2.win-amd64-py2.7.exe)
-* Install all 4 softwares above in sequence. When installing Python, on
-customization option, ensure that you check item "Add python.exe to Path" to
-"Will be installed on local hard drive" (see image below). If you do not enable this option, you
-will not be able to complete the next step. 
-<img src="http://duken.info/cet/img/customize_python.png" align="center" hspace="10" vspace="6">
-* Download Routes 2.0 (http://duken.info/cet/routes/Routes-2.0.zip)
-* Extract and unzip Routes, then double click `install.cmd`
-  Please wait until installation has completed. You can safely delete this folder
-  after completing the installation.
-* Download civil-engineering-toolbox (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
-* Extract and unzip it into one of your directory.
-* Double click `Main.py`
-* Open your browser to access http://127.0.0.1:1234
-* Happy designing :)
+I'm sorry but it seems that CherryPy installer can not detect Python 64 bit
+on Windows. So, for you that use Windows 64 bit, you can still install using 
+installation guide for 32 bit above.
 
 ## Linux
 Due to many variant of Linux distribution, here I will summarize steps to install
