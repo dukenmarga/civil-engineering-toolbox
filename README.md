@@ -12,8 +12,31 @@ formula), or to give quick estimation.
 #Features
 Structure
  * Steel Profile Table (IWF)
+Math
+ * Unit Converter
 
-#Request for a Feature
+#Contribute
+You can contribute to make this software better, even if you know nothing about
+programming. Your contribution include:
+* Create documentation
+* <a href="https://github.com/dukenmarga/civil-engineering-toolbox/issues/new?title=Fix%20typo%20/%20Ambiguous%20Sentences:%20_your_subject_"
+target="_blank">
+Fix typo, misspelled words, wrong grammar, ambiguous sentences, or propose
+better vocabulary/definition</a>
+* <a href="https://github.com/dukenmarga/civil-engineering-toolbox/issues/new?title=Improve%20Layout:%20_your_subject_"
+target="_blank">
+Improve layout of application</a>. Please send your better proposed layout.
+* <a href="https://github.com/dukenmarga/civil-engineering-toolbox/issues/new?title=Feature%20request:%20_your_subject_"
+target="_blank">
+Request for a feature to create flexible application</a> (for example: fixed table
+header on top of browser if scrolled down)
+* <a href="https://github.com/dukenmarga/civil-engineering-toolbox/issues/new?title=Numeric%20algorithm:%20_your_subject_"
+target="_blank">
+Better numeric algorithm</a>. Please send a detailed explanation.
+* Request for an application (see below for more detailed explanation)
+You can 
+
+#Request for an Application
 If you want to request application, you can 
 <a href="https://github.com/dukenmarga/civil-engineering-toolbox/issues/new?title=Application%20Request:%20_application_name_" target="_blank">
 create a new issue </a> and describe your application.

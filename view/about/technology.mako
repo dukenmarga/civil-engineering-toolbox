@@ -14,6 +14,7 @@
             <li><a href="http://www.html5rocks.com/en/" target="_blank">HTML 5</a></li>
             <li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a></li>
             <li><a href="http://tablesorter.com/docs/" target="_blank">jQuery Tablesorter</a></li>
+            <li><a href="http://mkoryak.github.io/floatThead/" target="_blank">jQuery floatThead</a></li>
         </ul>
     </div>
 </%block>

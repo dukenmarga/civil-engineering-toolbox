@@ -13,3 +13,6 @@ class About:
     def home(self):
         template = view.lookup.get_template('about/home.mako')
         return template.render()
+    def options(self):
+        template = view.lookup.get_template('about/options.mako')
+        return template.render()

@@ -5,21 +5,31 @@
             <!-- LEFT -->
             <ul class="nav navbar-nav">
                 <li class=""><a href="/"><i class="fa fa-home fa-fw"></i> Home</a></li>
-                <li class="dropdown">
+                <!--li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-legal"></i>
-                        Mekanika Bahan <span class="caret"></span></a>
+                        Mechanics of Material<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
+                    </ul>
+                </li-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-tower"></i>
+                        Structure <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                    <li><a href="/structure/steel_profile">
+                        <i class="fa fa-table"></i>
+                        Steel Section Tables</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="glyphicon glyphicon-tower"></i>
-                        Struktur <span class="caret"></span></a>
+                        <i class="fa fa-superscript"></i>
+                        Math <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                    <li><a href="/structure/steel_profile">
-                        <i class="fa fa-table"></i>
-                        Tabel Profil Baja</a></li>
+                    <li><a href="/math/unit_converter">
+                        <i class="glyphicon glyphicon-resize-full"></i>
+                        Unit Converter</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

@@ -20,9 +20,9 @@
         <script src="/static/jquery-ui/external/jquery/jquery.min.js"></script>
         <script src="/static/bootstrap/js/bootstrap.min.js"></script>
         <script src="/static/js/jquery-table-sorter.min.js"></script>
+        <script src="/static/js/jquery-floatThead.min.js"></script>
         <script src="/static/js/global.js"></script>
         <%block name="javascript">
-
         </%block>
     </head>
     <body>

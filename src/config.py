@@ -14,6 +14,6 @@ def setup():
             'server.socket_port' : 1234,
             'server.log_to_screen' : False,
             'server.show_tracebacks' : False,
-            'autoreload.on' : False
+            'autoreload.on' : False,
         },
     }
