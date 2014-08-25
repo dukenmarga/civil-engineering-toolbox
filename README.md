@@ -10,10 +10,10 @@ formula), or to give quick estimation.
 
 
 #Features
-Structure
- * Steel Profile Table (IWF)
-Math
- * Unit Converter
+* Structure
+    * Steel Profile Table (IWF)
+* Math
+    * Unit Converter
 
 #Contribute
 You can contribute to make this software better, even if you know nothing about
