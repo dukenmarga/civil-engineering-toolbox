@@ -34,7 +34,6 @@ header on top of browser if scrolled down)
 target="_blank">
 Better numeric algorithm</a>. Please send a detailed explanation.
 * Request for an application (see below for more detailed explanation)
-You can 
 
 #Request for an Application
 If you want to request application, you can 
