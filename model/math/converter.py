@@ -46,32 +46,38 @@ class Converter:
         pass
 
     def convert(self, val, from_, to):
-        try:
-            data = float(val) * to / from_
-        except Converter:
-            data = "Uups, it seems that you choose unavailable unit."
+        data = float(val) * to / from_
         return data
 
     def distance(self, val=1, from_='m', to='m'):
         """ Converter for distance unit
         """
-        from_ = float(self.distance_unit[from_])
-        to = float(self.distance_unit[to])
-        data = self.convert(val, from_, to)
+        try:
+            from_ = float(self.distance_unit[from_])
+            to = float(self.distance_unit[to])
+            data = self.convert(val, from_, to)
+        except:
+            return "Uups, check the number and unit!"
         return str(data)
 
     def force(self, val=1, from_='kgf', to='kgf'):
         """ Converter for force unit
         """
-        from_ = float(self.force_unit[from_])
-        to = float(self.force_unit[to])
-        data = self.convert(val, from_, to)
+        try:
+            from_ = float(self.force_unit[from_])
+            to = float(self.force_unit[to])
+            data = self.convert(val, from_, to)
+        except:
+            return "Uups, check the number and unit!"
         return str(data)
 
     def pressure(self, val=1, from_='pa', to='pa'):
         """ Converter for pressure unit
         """
-        from_ = float(self.pressure_unit[from_])
-        to = float(self.pressure_unit[to])
-        data = self.convert(val, from_, to)
+        try:
+            from_ = float(self.pressure_unit[from_])
+            to = float(self.pressure_unit[to])
+            data = self.convert(val, from_, to)
+        except:
+            return "Uups, check the number and unit!"
         return str(data)

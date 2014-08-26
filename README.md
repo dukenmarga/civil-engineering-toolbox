@@ -84,12 +84,10 @@ will not be able to complete the next step.
 indication that your program is started correctly.
 * Open your browser to access http://127.0.0.1:1234
 * Happy designing :)
-
 ## Windows 64-bit
 I'm sorry but it seems that CherryPy installer can not detect Python 64 bit
 on Windows. So, for you who use Windows 64 bit, you can still install using 
 installation guide for 32 bit above.
-
 ## Linux
 Due to many variant of Linux distribution, here I will summarize steps to install
 **civil-engineering-toolbox**. I believe that you had already able to use your
