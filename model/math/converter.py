@@ -20,7 +20,7 @@ class Converter:
         self.force_unit = {
             'dyne (dyn)': 980665,
             'kilonewton (kN)': 0.00980665,
-            'kilopund-force (kipf)': 0.002204623,
+            'kilopound-force (kipf)': 0.002204623,
             'kip-force (kipf)': 0.002204623,
             'newton (N)': 9.80665,
             'pound-force (lbf)': 2.204622622,
@@ -49,7 +49,7 @@ class Converter:
         data = float(val) * to / from_
         return data
 
-    def distance(self, val=1, from_='m', to='m'):
+    def distance(self, val=1, from_='m', to='micron'):
         """ Converter for distance unit
         """
         try:
