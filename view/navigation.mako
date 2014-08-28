@@ -32,6 +32,8 @@
                         Unit Converter</a></li>
                     </ul>
                 </li>
+                <li><a href="/options"><i class="fa fa-gears"></i>
+                    Options</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-question"></i>
@@ -49,7 +51,7 @@
                         About</a></li>
                     </ul>
                 </li>
-            </ul>
+      </ul>
             <!-- RIGHT -->
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">

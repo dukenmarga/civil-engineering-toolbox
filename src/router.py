@@ -31,6 +31,12 @@ def setup():
                    controller=a, action="technology")
     router.connect(name='home', route='/',
                    controller=a, action="home")
+    router.connect(name='options', route='/options',
+                   controller=a, action="options")
+    router.connect(name='reset_options', route='/options/reset',
+                   controller=a, action="reset_options")
+    router.connect(name='set_options', route='/options/save',
+                   controller=a, action="set_options")
 
 
     #Connect router handler as src

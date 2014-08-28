@@ -13,6 +13,12 @@
               rel="stylesheet" type="text/css" />
         <link href="/static/font-awesome/css/font-awesome.min.css"
               rel="stylesheet" type="text/css" />
+        <link href="/static/jquery-ui/jquery-ui.min.css"
+              rel="stylesheet" type="text/css" />
+        <link href="/static/jquery-ui/jquery-ui.theme.min.css"
+              rel="stylesheet" type="text/css" />
+        <link href="/static/css/custom.css"
+              rel="stylesheet" type="text/css" />
         <%block name="css">
         </%block>
 
@@ -21,6 +27,7 @@
         <script src="/static/bootstrap/js/bootstrap.min.js"></script>
         <script src="/static/js/jquery-table-sorter.min.js"></script>
         <script src="/static/js/jquery-floatThead.min.js"></script>
+        <script src="/static/jquery-ui/jquery-ui.min.js"></script>
         <script src="/static/js/global.js"></script>
         <%block name="javascript">
         </%block>
@@ -29,7 +36,7 @@
         <div class="container-fluid">
             <%include file="navigation.mako"/>
             <div class="row content">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="row col-md-10 col-md-offset-1">
                     <%block name="content">
                         No content
                     </%block>
