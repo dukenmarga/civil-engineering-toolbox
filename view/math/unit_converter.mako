@@ -25,10 +25,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <input class="form-control" value="1" id="pressureFromNumber">
+                        <input value="1" type="text" id="pressureFromNumber">
                     </div>
                     <div class="col-md-6">
-                        <input class="form-control" value="1" id="pressureToNumber">
+                        <input value="1" type="text" id="pressureToNumber">
                     </div>
                 </div>
                 <div class="row">
@@ -58,10 +58,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <input class="form-control" value="1" id="forceFromNumber">
+                        <input value="1" type="text" id="forceFromNumber">
                     </div>
                     <div class="col-md-6">
-                        <input class="form-control" value="1" id="forceToNumber">
+                        <input value="1" type="text" id="forceToNumber">
                     </div>
                 </div>
                 <div class="row">
@@ -91,10 +91,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <input class="form-control" value="1" id="distanceFromNumber">
+                        <input value="1" type="text" id="distanceFromNumber">
                     </div>
                     <div class="col-md-6">
-                        <input class="form-control" value="1" id="distanceToNumber">
+                        <input value="1" type="text" id="distanceToNumber">
                     </div>
                 </div>
                 <div class="row">
