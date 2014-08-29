@@ -28,7 +28,7 @@
                         <input value="1" type="text" id="pressureFromNumber">
                     </div>
                     <div class="col-md-6">
-                        <input value="1" type="text" id="pressureToNumber">
+                        <span id="pressureToNumber">1</span>
                     </div>
                 </div>
                 <div class="row">
@@ -61,7 +61,7 @@
                         <input value="1" type="text" id="forceFromNumber">
                     </div>
                     <div class="col-md-6">
-                        <input value="1" type="text" id="forceToNumber">
+                        <span id="forceToNumber">1</span>
                     </div>
                 </div>
                 <div class="row">
@@ -94,7 +94,7 @@
                         <input value="1" type="text" id="distanceFromNumber">
                     </div>
                     <div class="col-md-6">
-                        <input value="1" type="text" id="distanceToNumber">
+                        <span id="distanceToNumber">1</span>
                     </div>
                 </div>
                 <div class="row">

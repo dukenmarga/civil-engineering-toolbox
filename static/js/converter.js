@@ -15,7 +15,7 @@ $(document).ready(function(){
             url: "/math/unit_converter/pressure/",
             data: { val: val, from_: from, to: to }
         }).done(function(r) {
-            $("#pressureToNumber").val(r);
+            $("#pressureToNumber").text(r);
         });
     }
 
@@ -35,7 +35,7 @@ $(document).ready(function(){
             url: "/math/unit_converter/force/",
             data: { val: val, from_: from, to: to }
         }).done(function(r) {
-            $("#forceToNumber").val(r);
+            $("#forceToNumber").text(r);
         });
     }
 
@@ -55,7 +55,7 @@ $(document).ready(function(){
             url: "/math/unit_converter/distance/",
             data: { val: val, from_: from, to: to }
         }).done(function(r) {
-            $("#distanceToNumber").val(r);
+            $("#distanceToNumber").text(r);
         });
     }
 });
