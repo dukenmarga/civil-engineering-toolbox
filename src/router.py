@@ -9,17 +9,17 @@ def setup():
 
     #STRUCTURE
     a = steel_profile.Steel_Profile()
-    router.connect(name='structure_steel_profile', route='/structure/steel_profile',
+    router.connect(name='structure_steel_profile', route='/structure/steel-profile',
                    controller=a, action="index")
     #MATH
     a = converter.Converter()
-    router.connect(name='index_converter', route='/math/unit_converter',
+    router.connect(name='index_converter', route='/math/unit-converter',
                    controller=a, action="index")
-    router.connect(name='distance_converter', route='/math/unit_converter/distance/',
+    router.connect(name='distance_converter', route='/math/unit-converter/distance/',
                    controller=a, action="distance")
-    router.connect(name='pressure_converter', route='/math/unit_converter/pressure/',
+    router.connect(name='pressure_converter', route='/math/unit-converter/pressure/',
                    controller=a, action="pressure")
-    router.connect(name='force_converter', route='/math/unit_converter/force/',
+    router.connect(name='force_converter', route='/math/unit-converter/force/',
                    controller=a, action="force")
     #ABOUT
     a = about.About()

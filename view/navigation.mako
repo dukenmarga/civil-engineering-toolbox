@@ -17,7 +17,7 @@
                         <i class="glyphicon glyphicon-tower"></i>
                         Structure <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                    <li><a href="/structure/steel_profile">
+                    <li><a href="/structure/steel-profile">
                         <i class="fa fa-table"></i>
                         Steel Section Tables</a></li>
                     </ul>
@@ -27,7 +27,7 @@
                         <i class="fa fa-superscript"></i>
                         Math <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                    <li><a href="/math/unit_converter">
+                    <li><a href="/math/unit-converter">
                         <i class="glyphicon glyphicon-resize-full"></i>
                         Unit Converter</a></li>
                     </ul>

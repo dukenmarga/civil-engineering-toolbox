@@ -12,7 +12,7 @@ $(document).ready(function(){
         to = $("#pressureToUnit").val()
         $.ajax({
             type: 'GET',
-            url: "/math/unit_converter/pressure/",
+            url: "/math/unit-converter/pressure/",
             data: { val: val, from_: from, to: to }
         }).done(function(r) {
             $("#pressureToNumber").text(r);
@@ -32,7 +32,7 @@ $(document).ready(function(){
         to = $("#forceToUnit").val()
         $.ajax({
             type: 'GET',
-            url: "/math/unit_converter/force/",
+            url: "/math/unit-converter/force/",
             data: { val: val, from_: from, to: to }
         }).done(function(r) {
             $("#forceToNumber").text(r);
@@ -52,7 +52,7 @@ $(document).ready(function(){
         to = $("#distanceToUnit").val()
         $.ajax({
             type: 'GET',
-            url: "/math/unit_converter/distance/",
+            url: "/math/unit-converter/distance/",
             data: { val: val, from_: from, to: to }
         }).done(function(r) {
             $("#distanceToNumber").text(r);
