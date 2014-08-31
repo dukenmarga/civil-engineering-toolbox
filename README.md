@@ -58,6 +58,7 @@ software. **civil-engineering-toolbox** depends on some software, especially
 for interpreter, web server and templating. If you are using Windows 7, open all
 of these files as Administrator (right click then choose `Run as Administrator`)
 in case your computer doesn't allow installing program using non-privileged user.
+
 ## Windows 32-bit
 * Download Python 2.7+ (https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi)
 * Download Mako 1.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win32-py2.7.exe)
@@ -84,10 +85,12 @@ will not be able to complete the next step.
 indication that your program is started correctly.
 * Open your browser to access http://127.0.0.1:1234
 * Happy designing :)
+
 ## Windows 64-bit
 I'm sorry but it seems that CherryPy installer can not detect Python 64 bit
 on Windows. So, for you who use Windows 64 bit, you can still install using 
 installation guide for 32 bit above.
+
 ## Linux
 Due to many variant of Linux distribution, here I will summarize steps to install
 **civil-engineering-toolbox**. I believe that you had already able to use your
