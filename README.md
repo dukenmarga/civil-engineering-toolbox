@@ -12,6 +12,8 @@ formula), or to give quick estimation.
 #Features
 * Structure
     * Steel Profile Table (IWF)
+* Geotechnic
+    * Surcharge Point Load
 * Math
     * Unit Converter
 
