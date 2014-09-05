@@ -9,6 +9,11 @@
                     <li><a href="/structure/steel-profile">Steel Section Tables</a></li>
                 </ul>
             </li>
+            <li>Geotechnic
+                <ul>
+                    <li><a href="/geotechnic/surcharge/point-load">Surcharge Point Load</a></li>
+                </ul>
+            </li>
             <li>Math
                 <ul>
                     <li><a href="/math/unit-converter">Unit Converter</a></li>

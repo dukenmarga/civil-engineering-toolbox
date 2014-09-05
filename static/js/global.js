@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     /* Table fixed header */
     $(".table").tablesorter();
     $("table").floatThead({ useAbsolutePositioning: false, zIndex: 1 });
@@ -14,5 +15,4 @@ $(document).ready(function(){
             return false;
         }
     });
-
 });

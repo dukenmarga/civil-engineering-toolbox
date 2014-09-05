@@ -24,6 +24,16 @@
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class=""></i>
+                        Geotechnic <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                    <li><a href="/geotechnic/surcharge/point-load">
+                        <i class=""></i>
+                        Surcharge Point Load</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-superscript"></i>
                         Math <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">

@@ -1,5 +1,6 @@
 import cherrypy
 from controller.structure import steel_profile
+from controller.geotechnic import surcharge_load
 from controller.math import converter
 from controller.about import about
 
@@ -11,6 +12,10 @@ def setup():
     a = steel_profile.Steel_Profile()
     router.connect(name='structure_steel_profile', route='/structure/steel-profile',
                    controller=a, action="index")
+    #GEOTECHNIC
+    a = surcharge_load.Surcharge_Load()
+    router.connect(name='surcharge_point', route='/geotechnic/surcharge/point-load',
+                   controller=a, action="point")
     #MATH
     a = converter.Converter()
     router.connect(name='index_converter', route='/math/unit-converter',
