@@ -60,12 +60,12 @@
 </%block>
 
 <%block name="css">
-    <link href="/static/vis/dist/vis.min.css"
+    <link href="/static/vis/src/vis.min.css"
         rel="stylesheet" type="text/css" />
 </%block>
 
 <%block name="javascript">
-    <script src="/static/vis/dist/vis.min.js"></script>
+    <script src="/static/vis/src/vis.min.js"></script>
     <script>
     $(document).ready(function(){
         /* Plot 3D Surcharge Load */
