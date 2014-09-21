@@ -1,3 +1,6 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
 /* Twitter-like glowing box */
 input[type=text], textarea {
 	transition: all 0.30s ease-in-out;

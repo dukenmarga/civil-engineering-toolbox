@@ -19,6 +19,14 @@
               rel="stylesheet" type="text/css" />
         <link href="/static/css/custom.css"
               rel="stylesheet" type="text/css" />
+        <style>
+        @font-face {
+          font-family: 'PT Sans';
+          font-style: normal;
+          font-weight: 400;
+          src: local('PT Sans'), local('PTSans-Regular'), url(/static/css/pt-sans.woff) format('woff');
+        }
+        </style>
         <%block name="css">
         </%block>
 
