@@ -4,13 +4,13 @@
     <h4>Point Load</h4>
     <div class="row">
         <div class="col-md-6">
-            <form role="form" action="/geotechnic/surcharge/point-load" method="get">
+            <form role="form" action="/geotechnic/surcharge/strip-load" method="get">
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="q">Point Load (Q)</label>
+                        <label for="q">Strip Load (Q)</label>
                      </div>
                     <div class="col-md-6">
-                        <input type="text" name="q" id="q" value="${q}"> KN
+                        <input type="text" name="q" id="q" value="${q}"> KN/m2
                     </div>
                 </div>
                 <div class="row">
@@ -19,6 +19,14 @@
                     </div>
                     <div class="col-md-6">
                         <input type="text" name="x_load" id="x_load" value="${x_load}"> m
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="width">Width Load (B)</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" name="width" id="width" value="${width}"> m
                     </div>
                 </div>
                 <div class="row">
@@ -77,22 +85,16 @@
             // create some shortcuts to math functions
             var sqrt = Math.sqrt;
             var pow = Math.pow;
+            var sin = Math.sin;
             var cos = Math.cos;
             var atan = Math.atan;
+            var pi = Math.PI;
 
             var q = ${q}; //KN
             var x_load = ${x_load}; //m
+            var width = ${width}; //m
             var H = ${H}; //m
             m = x_load/H;
-            if(m>0.4){
-                A = 1.77;
-                B = pow(m,2);
-                C = B;
-            } else {
-                A = 0.28;
-                B = 0.16;
-                C = 1;
-            }
 
             // create the data table.
             data = new vis.DataSet();
@@ -100,18 +102,21 @@
             // create the animation data
             var start = ${start}; //m
             var end = ${end}; // m
-            delta = (end-start)/100;
-            for (var i=start; i<end; i+=delta) {
-                for (var j=0; j<H; j+=0.2){
-                    var n = j/H;
+            delta1 = (end-start)/100;
+            delta2 = H/100;
+
+            // x=i=length; z=j=depth;
+            for (var i=start; i<end; i+=delta1) {
+                for (var j=0.01; j<H; j+=delta2){
                     var x = i;
-                    n2 = pow(n,2)
-                    var y = A*q/pow(H,2)*C*n2/pow(B+n2,3);
-                    pi = atan((i/x_load));//rad
-                    var y1 = -y*pow(cos(1.1*pi),2)
+                    var alpha = atan((x_load+width/2)/j); //rad
+                    var gamma = atan((x_load+width)/j); //rad
+                    var beta = (gamma-alpha)*2; //rad
+
+                    var y = 2*q/pi*( (beta+sin(beta))*pow(sin(alpha),2) + (beta-sin(alpha))*pow(cos(alpha),2) );
                     var z = -j;
 
-                    data.add({x:x,y:y1,z:z,style:y1});
+                    data.add({x:x,y:-y,z:z,style:y});
                 }
             }
 

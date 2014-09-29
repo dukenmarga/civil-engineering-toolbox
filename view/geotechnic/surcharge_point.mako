@@ -105,7 +105,6 @@
                 for (var j=0; j<H; j+=0.2){
                     var n = j/H;
                     var x = i;
-                    n2 = pow(n,2)
                     var y = A*q/pow(H,2)*C*n2/pow(B+n2,3);
                     pi = atan((i/x_load));//rad
                     var y1 = -y*pow(cos(1.1*pi),2)

@@ -5,13 +5,6 @@
             <!-- LEFT -->
             <ul class="nav navbar-nav">
                 <li class=""><a href="/"><i class="fa fa-home fa-fw"></i> Home</a></li>
-                <!--li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-legal"></i>
-                        Mechanics of Material<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                    </ul>
-                </li-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="glyphicon glyphicon-tower"></i>
@@ -30,6 +23,9 @@
                     <li><a href="/geotechnic/surcharge/point-load">
                         <i class=""></i>
                         Surcharge Point Load</a></li>
+                    <li><a href="/geotechnic/surcharge/strip-load">
+                        <i class=""></i>
+                        Surcharge Strip Load</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -61,7 +57,7 @@
                         About</a></li>
                     </ul>
                 </li>
-      </ul>
+            </ul>
             <!-- RIGHT -->
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">

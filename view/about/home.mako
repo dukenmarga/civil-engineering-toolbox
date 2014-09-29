@@ -13,6 +13,9 @@
                 <ul>
                     <li><a href="/geotechnic/surcharge/point-load">Surcharge Point Load</a></li>
                 </ul>
+                <ul>
+                    <li><a href="/geotechnic/surcharge/strip-load">Surcharge Strip Load</a></li>
+                </ul>
             </li>
             <li>Math
                 <ul>
