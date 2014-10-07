@@ -16,6 +16,8 @@ def setup():
     a = surcharge_load.Surcharge_Load()
     router.connect(name='surcharge_point', route='/geotechnic/surcharge/point-load',
                    controller=a, action="point")
+    router.connect(name='surcharge_point_img', route='/geotechnic/surcharge/point_image.png',
+                   controller=a, action="point_image_png")
     router.connect(name='surcharge_strip', route='/geotechnic/surcharge/strip-load',
                    controller=a, action="strip")
     #MATH
