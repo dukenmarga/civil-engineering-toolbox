@@ -36,7 +36,7 @@ class Surcharge_Load:
             pi = math.atan2(i, x_load) #rad
             for j in y:
                 n = j/H
-                z = A*q/pow(H,2)*C*n/math.pow(B+n,3)
+                z = A*q/math.pow(H,2)*C*n/math.pow(B+n,3)
                 z = -z*math.pow(math.cos(1.1*pi),2)
                 Z.append(z)
         Z = np.array(Z).reshape((len(y), len(x))).transpose()

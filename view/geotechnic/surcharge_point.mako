@@ -54,7 +54,7 @@
             </form>
         </div>
         <div id='plot' class="col-md-6">
-            <img src="${plot_name}" width="640" height="480" border="0" />
+            <img src="data:image/png;base64,${plot_image}" width="640" height="480" border="0" />
             <!-- SurfacePlot goes here... -->
         </div>
     </div>

@@ -5,6 +5,7 @@ from matplotlib import pyplot
 
 import cherrypy
 from cStringIO import StringIO
+import base64
 
 class Plot:
     """ Generate additional horizontal load due to
@@ -14,14 +15,11 @@ class Plot:
     def __init__(self):
         pass
 
-    def image(self, x, y, z, plot_name="image.png"):
+    def pcolor(self, x, y, z):
         img = StringIO()
         pyplot.pcolor(x, y, z)
         pyplot.colorbar(orientation="horizontal")
 
         pyplot.savefig(img, format='png')
-        img.seek(0)
         pyplot.clf()
-        return cherrypy.lib.static.serve_fileobj(img,
-            content_type="png",
-            name=plot_name)
+        return base64.encodestring(img.getvalue())

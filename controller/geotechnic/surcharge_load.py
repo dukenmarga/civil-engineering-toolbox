@@ -14,15 +14,14 @@ class Surcharge_Load:
             'H': H, #m
             'start': start, #m
             'end': end, # m
-            'plot_name': 'point_image.png?q='+str(q)+"&x_load="+str(x_load)+
-                         "&H="+str(H)+"&start="+str(start)+"&end="+str(end)
+            'plot_image': self.point_image(q, x_load, H, start, end)
         }
         return template.render(**data)
-    def point_image_png(self, q=200, x_load=1.2, H=12, start=-10, end=10):
+    def point_image(self, q=200, x_load=1.2, H=12, start=-10, end=10):
         model = surcharge_load.Surcharge_Load()
         x, y, z = model.point(float(q), float(x_load), float(H), float(start), float(end))
         plt = plot.Plot()
-        return plt.image(x, y, z, "point_image_png")
+        return plt.pcolor(x, y, z)
 
     def strip(self, q=200, x_load=1.2, width=1, H=5, start=-10, end=10):
         template = view.lookup.get_template('geotechnic/surcharge_strip.mako')
