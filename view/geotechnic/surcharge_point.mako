@@ -55,17 +55,12 @@
         </div>
         <div id='plot' class="col-md-6">
             <img src="data:image/png;base64,${plot_image}" width="640" height="480" border="0" />
-            <!-- SurfacePlot goes here... -->
         </div>
     </div>
 </%block>
 
 <%block name="css">
-    <link href="/static/vis/src/vis.min.css"
-        rel="stylesheet" type="text/css" />
 </%block>
 
 <%block name="javascript">
-    <script src="/static/vis/src/vis.min.js"></script>
-
 </%block>

@@ -33,5 +33,11 @@ class Surcharge_Load:
             'H': H, #m
             'start': start, #m
             'end': end, # m
+            'plot_image': self.strip_image(q, x_load, width, H, start, end)
         }
         return template.render(**data)
+    def strip_image(self, q=200, x_load=1.2, width=1, H=5, start=-10, end=10):
+        model = surcharge_load.Surcharge_Load()
+        x, y, z = model.strip(float(q), float(x_load), float(width), float(H), float(start), float(end))
+        plt = plot.Plot()
+        return plt.pcolor(x, y, z)
