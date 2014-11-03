@@ -12,105 +12,15 @@
         <li><a href="#distance" role="tab" data-toggle="tab">Distance</a></li>
     </ul>
     <div id="converterContent" class="tab-content col-md-6 col-md-offset-3">
-        <div id="pressure" class="tab-pane active">
-            <h4>Pressure Converter</h4>
-            <form role="form">
-                <div class="row">
-                    <div class="col-md-6">
-                        From
-                    </div>
-                    <div class="col-md-6">
-                        To
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <input value="1" type="text" id="pressureFromNumber">
-                    </div>
-                    <div class="col-md-6">
-                        <span id="pressureToNumber">1</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <select class="form-control" id="pressureFromUnit" size="15">
-                            ${pressure}
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <select class="form-control" id="pressureToUnit" size="15">
-                            ${pressure}
-                        </select>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div id="force" class="tab-pane">
-            <h4>Force Converter</h4>
-            <form role="form">
-                <div class="row">
-                    <div class="col-md-6">
-                        From
-                    </div>
-                    <div class="col-md-6">
-                        To
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <input value="1" type="text" id="forceFromNumber">
-                    </div>
-                    <div class="col-md-6">
-                        <span id="forceToNumber">1</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <select class="form-control" id="forceFromUnit" size="15">
-                            ${force}
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <select class="form-control" id="forceToUnit" size="15">
-                            ${force}
-                        </select>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div id="distance" class="tab-pane">
-            <h4>Distance Converter</h4>
-            <form role="form">
-                <div class="row">
-                    <div class="col-md-6">
-                        From
-                    </div>
-                    <div class="col-md-6">
-                        To
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <input value="1" type="text" id="distanceFromNumber">
-                    </div>
-                    <div class="col-md-6">
-                        <span id="distanceToNumber">1</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <select class="form-control" id="distanceFromUnit" size="15">
-                            ${distance}
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <select class="form-control" id="distanceToUnit" size="15">
-                            ${distance}
-                        </select>
-                    </div>
-                </div>
-            </form>
-        </div>
+        ${section("pressure", "Pressure Converter", "pressureFromNumber",
+                "pressureToNumber", "pressureFromUnit", "pressureToUnit",
+                pressure, "active")}
+        ${section("force", "Force Converter", "forceFromNumber",
+                "forceToNumber", "forceFromUnit", "forceToUnit",
+                force, "")}
+        ${section("distance", "Distance Converter", "distanceFromNumber",
+                "distanceToNumber", "distanceFromUnit", "distanceToUnit",
+                distance, "")}
     </div>
     <script>
         $('#converter a').click(function (e) {
@@ -119,3 +29,40 @@
         })
     </script>
 </%block>
+
+<%def name="section(name, title, idFromNumber, idToNumber, idFromUnit, idToUnit,
+                    unit_list, clss)">
+    <div id="${name}" class="tab-pane ${clss}">
+        <h4>${title}</h4>
+        <form role="form">
+            <div class="row">
+                <div class="col-md-6">
+                    From
+                </div>
+                <div class="col-md-6">
+                    To
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <input value="1" type="text" id="${idFromNumber}">
+                </div>
+                <div class="col-md-6">
+                    <span id="${idToNumber}">1</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <select class="form-control" id="${idFromUnit}" size="15">
+                        ${unit_list}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" id="${idToUnit}" size="15">
+                        ${unit_list}
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</%def>

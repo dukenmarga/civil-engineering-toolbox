@@ -5,54 +5,12 @@
     <div class="row">
         <div class="col-md-6">
             <form role="form" action="/geotechnic/surcharge/strip-load" method="get">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="q">Strip Load (Q)</label>
-                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="q" id="q" value="${q}"> KN/m2
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="x_load">Distance from edge (x)</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="x_load" id="x_load" value="${x_load}"> m
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="width">Width Load (B)</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="width" id="width" value="${width}"> m
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="H">Depth (H)</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="H" id="H" value="${H}"> m
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="start">Left Boundary</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="start" id="start" value="${start}"> m
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="end">Right Boundary</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="end" id="end" value="${end}"> m
-                    </div>
-                </div>
+                ${row("q", q, "Strip Load (Q)", "KN/m2")}
+                ${row("x_load", x_load, "Distance from edge (x)", "m")}
+                ${row("width", width, "Width Load (B)", "m")}
+                ${row("H", H, "Depth (H)", "m")}
+                ${row("start", start, "Left Boundary", "m")}
+                ${row("end", end, "Right Boundary", "m")}
                 <hr>
                 <div class="row">
                     <div class="col-md-6">
@@ -72,3 +30,14 @@
 
 <%block name="javascript">
 </%block>
+
+<%def name="row(name, val, title, unit)">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="${name}">${title}</label>
+         </div>
+        <div class="col-md-6">
+            <input type="text" name="${name}" id="${name}" value="${val}"> ${unit}
+        </div>
+    </div>
+</%def>

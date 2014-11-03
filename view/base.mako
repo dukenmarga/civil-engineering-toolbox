@@ -7,18 +7,11 @@
         </%block>
         </title>
         <!-- CSS -->
-        <link href="/static/bootstrap/css/bootstrap.min.css"
-              rel="stylesheet" type="text/css" />
-        <link href="/static/bootstrap/css/bootstrap.min.css"
-              rel="stylesheet" type="text/css" />
-        <link href="/static/font-awesome/css/font-awesome.min.css"
-              rel="stylesheet" type="text/css" />
-        <link href="/static/jquery-ui/jquery-ui.min.css"
-              rel="stylesheet" type="text/css" />
-        <link href="/static/jquery-ui/jquery-ui.theme.min.css"
-              rel="stylesheet" type="text/css" />
-        <link href="/static/css/custom.css"
-              rel="stylesheet" type="text/css" />
+        ${css_file("bootstrap/css/bootstrap.min.css")}
+        ${css_file("font-awesome/css/font-awesome.min.css")}
+        ${css_file("jquery-ui/jquery-ui.min.css")}
+        ${css_file("jquery-ui/jquery-ui.theme.min.css")}
+        ${css_file("css/custom.css")}
         <style>
         @font-face {
           font-family: 'PT Sans';
@@ -31,12 +24,12 @@
         </%block>
 
         <!-- JS -->
-        <script src="/static/jquery-ui/external/jquery/jquery.min.js"></script>
-        <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/static/js/jquery-table-sorter.min.js"></script>
-        <script src="/static/js/jquery-floatThead.min.js"></script>
-        <script src="/static/jquery-ui/jquery-ui.min.js"></script>
-        <script src="/static/js/global.js"></script>
+        ${js_file("jquery-ui/external/jquery/jquery.min.js")}
+        ${js_file("bootstrap/js/bootstrap.min.js")}
+        ${js_file("js/jquery-table-sorter.min.js")}
+        ${js_file("js/jquery-floatThead.min.js")}
+        ${js_file("jquery-ui/jquery-ui.min.js")}
+        ${js_file("js/global.js")}
         <%block name="javascript">
         </%block>
     </head>
@@ -58,3 +51,12 @@
         </div>
     </body>
 </html>
+
+<%def name="css_file(url)">
+    <link href="/static/${url}"
+          rel="stylesheet" type="text/css" />
+</%def>
+
+<%def name="js_file(url)">
+    <script src="/static/${url}"></script>
+</%def>
