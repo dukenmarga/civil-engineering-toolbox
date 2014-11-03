@@ -10,11 +10,12 @@ class Converter:
         distance = ""
         pressure = ""
         force = ""
-        for key, val in model.distance_unit.items():
+
+        for key, val in sorted(model.distance_unit.items()):
             distance += "<option value='"+ key +"'>" + key + "</option>"
-        for key, val in model.pressure_unit.items():
+        for key, val in sorted(model.pressure_unit.items()):
             pressure += "<option value='"+ key +"'>" + key + "</option>"
-        for key, val in model.force_unit.items():
+        for key, val in sorted(model.force_unit.items()):
             force += "<option value='"+ key +"'>" + key + "</option>"
         data = {
             'distance': distance,
