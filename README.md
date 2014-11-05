@@ -62,10 +62,16 @@ of these files as Administrator (right click then choose `Run as Administrator`)
 in case your computer doesn't allow installing program using non-privileged user.
 
 ## Windows 32-bit
-* Download Python 2.7+ (https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi)
-* Download Mako 1.0 (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win32-py2.7.exe)
-* Download CherryPy 3.2 (http://download.cherrypy.org/cherrypy/3.2.2/CherryPy-3.2.2.win32.exe)
-* Download Setuptools (http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/setuptools-5.4.2.win32-py2.7.exe)
+* Download <a href="https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi">Python 2.7+</a>
+* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win32-py2.7.exe">Mako 1.0</a>
+* Download <a href="http://download.cherrypy.org/cherrypy/3.2.2/CherryPy-3.2.2.win32.exe">CherryPy 3.2</a>
+* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/numpy-MKL-1.9.1.win32-py2.7.exe">Numpy MKL</a>
+* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/python-dateutil-2.2.win32-py2.7.exe">Dateutil</a>
+* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/pytz-2014.7.win32-py2.7.exe">Pytz</a>
+* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/pyparsing-2.0.3.win32-py2.7.exe">pyparsing</a>
+* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/six-1.8.0.win32-py2.7.exe">six</a>
+* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/setuptools-5.4.2.win32-py2.7.exe">Setuptools</a>
+* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/matplotlib-1.4.2.win32-py2.7.exe">Matplotlib</a>
 * Install all 4 softwares above in sequence. When installing Python, on
 customization option, ensure that you check item "Add python.exe to Path" to
 "Will be installed on local hard drive" (see image below). If you do not enable this option, you
