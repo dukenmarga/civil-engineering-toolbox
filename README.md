@@ -72,7 +72,7 @@ in case your computer doesn't allow installing program using non-privileged user
 * Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/six-1.8.0.win32-py2.7.exe">six</a>
 * Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/setuptools-5.4.2.win32-py2.7.exe">Setuptools</a>
 * Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/matplotlib-1.4.2.win32-py2.7.exe">Matplotlib</a>
-* Install all 4 softwares above in sequence. When installing Python, on
+* Install all 10 softwares above in sequence. When installing Python, on
 customization option, ensure that you check item "Add python.exe to Path" to
 "Will be installed on local hard drive" (see image below). If you do not enable this option, you
 will not be able to complete the next step. 
@@ -110,6 +110,7 @@ Ensure you have installed Python setuptools before using the command.
 * Install Python 2.7+
 * Install Mako 0.9 or later (http://www.makotemplates.org/)
 * Install CherryPy 3.2 (http://www.cherrypy.org/)
+* Install Matplotlib 1.3+ (http://matplotlib.org/)
 * Install Python Routes 1.13+ or 2.0+ (https://pypi.python.org/pypi/Routes)
 * Download **civil-engineering-toolbox** (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
 * Extract and unzip it. Then open terminal and change your directory into it.
