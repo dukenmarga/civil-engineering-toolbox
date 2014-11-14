@@ -6,6 +6,11 @@
             Civil Engineering Toolbox
         </%block>
         </title>
+
+        <!-- Meta -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
         <!-- CSS -->
         ${css_file("bootstrap/css/bootstrap.min.css")}
         ${css_file("font-awesome/css/font-awesome.min.css")}
@@ -29,10 +34,20 @@
         ${js_file("js/jquery-table-sorter.min.js")}
         ${js_file("js/jquery-floatThead.min.js")}
         ${js_file("jquery-ui/jquery-ui.min.js")}
+        ${js_file("mathjax/MathJax.js?config=TeX-AMS-MML_SVG")}
         ${js_file("js/global.js")}
+        <script>
+            MathJax.Hub.Config({
+                SVG: {
+                    scale: 100,
+                    font: "STIX-Web",
+                    blacker: 2
+                }
+            });
+        </script>
         <%block name="javascript">
         </%block>
-    </head>
+</head>
     <body>
         <div class="container-fluid">
             <%include file="navigation.mako"/>
@@ -58,5 +73,5 @@
 </%def>
 
 <%def name="js_file(url)">
-    <script src="/static/${url}"></script>
+    <script type="text/javascript" src="/static/${url}"></script>
 </%def>

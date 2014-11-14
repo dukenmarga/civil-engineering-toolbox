@@ -1,19 +1,22 @@
 #civil-engineering-toolbox
-**civil-engineering-toolbox** is collection of small programs to help 
-civil engineer to solve small to medium size and common problems found in 
-engineering world in order to solve the main problems.
+**civil-engineering-toolbox** is collection of small programs of
+civil engineering that I built to help me to 
+solve small to medium and common problems when designing something.
+When I try to create programs for practical use, sometimes I will add programs
+that is pure-theory (mathematics) when I'm interested on it.
+
 It is web based application that can be opened in your own browser (offline)
 or can be accessed from other computer if you are connected to LAN (Local Area
 Network).
 This software can be used as a problem-solver, reminder (through the shown
-formula), or to give quick estimation.
-
+formula), or just to give quick estimation.
 
 #Features
 * Structure
     * Steel Profile Table (IWF)
 * Geotechnic
     * Surcharge Point Load
+    * Surcharge Strip Load
 * Math
     * Unit Converter
 

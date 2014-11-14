@@ -15,8 +15,8 @@
             <li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a></li>
             <li><a href="http://tablesorter.com/docs/" target="_blank">jQuery Tablesorter</a></li>
             <li><a href="http://mkoryak.github.io/floatThead/" target="_blank">jQuery floatThead</a></li>
-            <li><a href="https://pypi.python.org/pypi/repoze.lru" target="_blank">repoze.lru</a></li>
-            <li><a href="http://visjs.org/" target="_blank">vis.js</a></li>
+            <li><a href="http://matplotlib.org/" target="_blank">Matplotlib</a></li>
+            <li><a href="http://www.mathjax.org/" target="_blank">Mathjax</a></li>
         </ul>
     </div>
 </%block>
