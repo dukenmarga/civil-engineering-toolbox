@@ -10,13 +10,15 @@
                 ${row("H", H, "Depth (H)", "m")}
                 ${row("start", start, "Left Boundary", "m")}
                 ${row("end", end, "Right Boundary", "m")}
-                <hr>
                 <div class="row">
                     <div class="col-md-6">
                         <input type="submit" class="btn btn-primary" value="Analyze"><br>
                     </div>
                 </div>
             </form>
+            <hr>
+            <h4>Doc</h4>
+            ${doc}
         </div>
         <div id='plot' class="col-md-6">
             <img src="data:image/png;base64,${plot_image}" width="640" height="480" border="0" />

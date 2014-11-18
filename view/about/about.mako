@@ -18,10 +18,6 @@
                 data-content="Indonesia<br>
                 Structural Engineer<br>
                 http://duken.info" data-placement="auto">Duken Marga Turnip</li>
-            <!--li data-toggle="popover" class="info" title="Duken Marga Turnip"
-                data-content="Indonesia<br>
-                Institut Teknologi Bandung<br>
-                http://duken.info" data-placement="auto">Duken Marga Turnip</li-->
         </ol>
     </div>
     <div class="col-md-4">
