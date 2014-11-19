@@ -57,11 +57,11 @@ class Surcharge_Load:
         Z = []
         for i in x:
             for j in y:
-                alpha = math.atan2(x_load+width/2, j); #rad
-                gamma = math.atan2(x_load+width, j); #rad
-                beta = (gamma-alpha)*2; #rad
+                alpha = math.atan2(x_load+width/2, j) #rad
+                gamma = math.atan2(x_load+width, j) #rad
+                beta = (gamma-alpha)*2 #rad
 
-                z = 2*q/math.pi*( (beta+math.sin(beta))*pow(math.sin(alpha),2) + (beta-math.sin(alpha))*pow(math.cos(alpha),2) );
+                z = 2*q/math.pi*( (beta+math.sin(beta))*pow(math.sin(alpha),2) + (beta-math.sin(alpha))*pow(math.cos(alpha),2) )
                 Z.append(z)
         Z = np.array(Z).reshape((len(y), len(x))).transpose()
         return X, -Y, Z

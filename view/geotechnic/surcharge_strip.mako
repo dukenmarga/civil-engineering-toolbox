@@ -11,12 +11,14 @@
                 ${row("H", H, "Depth (H)", "m")}
                 ${row("start", start, "Left Boundary", "m")}
                 ${row("end", end, "Right Boundary", "m")}
-                <hr>
                 <div class="row">
                     <div class="col-md-6">
                         <input type="submit" class="btn btn-primary" value="Analyze"><br>
                     </div>
                 </div>
+                <hr>
+                <h4>Doc</h4>
+                ${doc}
             </form>
         </div>
         <div id='plot' class="col-md-6">
