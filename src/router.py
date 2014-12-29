@@ -12,6 +12,10 @@ def setup():
     a = steel_profile.Steel_Profile()
     router.connect(name='structure_steel_profile', route='/structure/steel-profile',
                    controller=a, action="index")
+    router.connect(name='structure_steel_profile', route='/structure/steel-profile/iwf',
+                   controller=a, action="iwf")
+    router.connect(name='structure_steel_profile', route='/structure/steel-profile/angle',
+                   controller=a, action="angle")
     #GEOTECHNIC
     a = surcharge_load.Surcharge_Load()
     router.connect(name='surcharge_point', route='/geotechnic/surcharge/point-load',

@@ -50,13 +50,6 @@ review it first before creating it.
 Application must be as general as possible and be used by most of civil
 engineers.
 
-#Requirement
-* Python 2.7+ (https://www.python.org/)
-* CherryPy 3.2.2 (http://www.cherrypy.org/)
-* Mako 0.9 or later (http://www.makotemplates.org/)
-* Python Routes 1.13+ or 2.0+ (https://pypi.python.org/pypi/Routes)
-* Repoze.lru 0.6 (https://pypi.python.org/pypi/repoze.lru)
-
 #Installation
 I'm sorry that there are many steps to go through before you can use this
 software. **civil-engineering-toolbox** depends on some software, especially
@@ -75,7 +68,8 @@ in case your computer doesn't allow installing program using non-privileged user
 * Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/six-1.8.0.win32-py2.7.exe">six</a>
 * Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/setuptools-5.4.2.win32-py2.7.exe">Setuptools</a>
 * Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/matplotlib-1.4.2.win32-py2.7.exe">Matplotlib</a>
-* Install all 10 softwares above in sequence. When installing Python, on
+* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/girnt9fk/sympy-0.7.6.win32-py2.7.exe">SymPy</a>
+* Install all 11 softwares above in sequence. When installing Python, on
 customization option, ensure that you check item "Add python.exe to Path" to
 "Will be installed on local hard drive" (see image below). If you do not enable this option, you
 will not be able to complete the next step. 
@@ -114,6 +108,7 @@ Ensure you have installed Python setuptools before using the command.
 * Install Mako 0.9 or later (http://www.makotemplates.org/)
 * Install CherryPy 3.2 (http://www.cherrypy.org/)
 * Install Matplotlib 1.3+ (http://matplotlib.org/)
+* Install SymPy 0.7+(http://sympy.org/)
 * Install Python Routes 1.13+ or 2.0+ (https://pypi.python.org/pypi/Routes)
 * Download **civil-engineering-toolbox** (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
 * Extract and unzip it. Then open terminal and change your directory into it.

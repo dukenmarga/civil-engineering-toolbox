@@ -9,7 +9,7 @@
     </p>
     <form role="form" action="options/save" method="get">
         <div class="row col-md-6">
-        <strong><i>Reinforced Concrete Structure</i></strong>
+        <h4>Reinforced Concrete Structure</h4>
             <div class="row">
                 <div class="col-md-6">
                     <label for="fc">Compressive Strength (fc')</label>
@@ -34,6 +34,14 @@
                     <input type="text" name="fyr" id="fyr" value="${fyr.value}"> MPa
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="conc_unit_weight">Concrete Unit Weight</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="conc_unit_weight" id="conc_unit_weight" value="${conc_unit_weight.value}"> kg/m3
+                </div>
+            </div>
         <hr>
         <strong><i>Steel Structure</i></strong>
             <div class="row">
@@ -50,6 +58,14 @@
                 </div>
                 <div class="col-md-6">
                     <input type="text" name="fus" id="fus" value="${fus.value}"> MPa
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="steel_unit_weight">Steel Unit Weight</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="steel_unit_weight" id="steel_unit_weight" value="${steel_unit_weight.value}"> kg/m3
                 </div>
             </div>
             <hr>

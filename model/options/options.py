@@ -11,9 +11,11 @@ class Options:
             'fyr': 400,
             'Gc': '{0:.2f}'.format(4700*math.sqrt(fc)),
             'Gs': 200000,
+            'conc_unit_weight': 2400,
             #Steel structure
             'fys': 240,
             'fus': 390,
+            'steel_unit_weight': 7850,
         }
 
     def set_options(self, kwargs):

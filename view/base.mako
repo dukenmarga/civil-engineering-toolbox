@@ -47,7 +47,7 @@
         </script>
         <%block name="javascript">
         </%block>
-</head>
+    </head>
     <body>
         <div class="container-fluid">
             <%include file="navigation.mako"/>
