@@ -10,6 +10,7 @@
                 ${row("H", H, "Depth (H)", "m")}
                 ${row("start", start, "Left Boundary", "m")}
                 ${row("end", end, "Right Boundary", "m")}
+                ${row("type", type, "Type of Retaining Wall", "<br><i>1:Flexible 2:Rigid</i>")}
                 <div class="row">
                     <div class="col-md-6">
                         <input type="submit" class="btn btn-primary" value="Analyze"><br>

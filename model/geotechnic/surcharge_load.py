@@ -8,7 +8,7 @@ class Surcharge_Load:
     def __init__(self):
         pass
 
-    def point(self, q, x_load, H, start, end):
+    def point(self, q, x_load, H, start, end, type):
         """ Point load
         """
         m = x_load/H
@@ -37,11 +37,11 @@ class Surcharge_Load:
             for j in y:
                 n = j/H
                 z = A*q/math.pow(H,2)*C*n/math.pow(B+n,3)
-                z = -z*math.pow(math.cos(1.1*pi),2)
+                z = -z*math.pow(math.cos(1.1*pi),2) * type
                 Z.append(z)
         Z = np.array(Z).reshape((len(y), len(x))).transpose()
         return X, -Y, -Z
-    def strip(self, q, x_load, width, H, start, end):
+    def strip(self, q, x_load, width, H, start, end, type):
         """ Strip load
         """
         divider = 100
@@ -61,7 +61,9 @@ class Surcharge_Load:
                 gamma = math.atan2(x_load+width, j) #rad
                 beta = (gamma-alpha)*2 #rad
 
-                z = 2*q/math.pi*( (beta+math.sin(beta))*pow(math.sin(alpha),2) + (beta-math.sin(alpha))*pow(math.cos(alpha),2) )
+                z = 2*q/math.pi*\
+                    ( (beta+math.sin(beta))*pow(math.sin(alpha),2)
+                    + (beta-math.sin(alpha))*pow(math.cos(alpha),2)) * type
                 Z.append(z)
         Z = np.array(Z).reshape((len(y), len(x))).transpose()
         return X, -Y, Z

@@ -6,7 +6,7 @@ from doc.geotechnic import surcharge_load_doc
 class Surcharge_Load:
     def __init__(self):
         pass
-    def point(self, q=200, x_load=1.2, H=12, start=-10, end=10):
+    def point(self, q=200, x_load=1.2, H=12, start=-10, end=10, type=2):
         template = view.lookup.get_template('geotechnic/surcharge_point.mako')
         doc = surcharge_load_doc.Surcharge_Load()
         data = {
@@ -15,17 +15,19 @@ class Surcharge_Load:
             'H': H, #m
             'start': start, #m
             'end': end, # m
-            'plot_image': self.point_image(q, x_load, H, start, end),
+            'type': type,
+            'plot_image': self.point_image(q, x_load, H, start, end, type),
             'doc' : doc.point()
         }
         return template.render(**data)
-    def point_image(self, q=200, x_load=1.2, H=12, start=-10, end=10):
+    def point_image(self, q=200, x_load=1.2, H=12, start=-10, end=10, type=2):
         model = surcharge_load.Surcharge_Load()
-        x, y, z = model.point(float(q), float(x_load), float(H), float(start), float(end))
+        x, y, z = model.point(float(q), float(x_load), float(H), float(start),
+                              float(end), float(type))
         plt = plot.Plot()
         return plt.pcolor(x, y, z)
 
-    def strip(self, q=200, x_load=1.2, width=1, H=5, start=-10, end=10):
+    def strip(self, q=200, x_load=1.2, width=1, H=5, start=-10, end=10, type=2):
         template = view.lookup.get_template('geotechnic/surcharge_strip.mako')
         doc = surcharge_load_doc.Surcharge_Load()
         data = {
@@ -35,12 +37,16 @@ class Surcharge_Load:
             'H': H, #m
             'start': start, #m
             'end': end, # m
-            'plot_image': self.strip_image(q, x_load, width, H, start, end),
+            'type': type,
+            'plot_image': self.strip_image(q, x_load, width, H, start, end,
+                                           type),
             'doc': doc.strip()
         }
         return template.render(**data)
-    def strip_image(self, q=200, x_load=1.2, width=1, H=5, start=-10, end=10):
+    def strip_image(self, q=200, x_load=1.2, width=1, H=5, start=-10, end=10,
+                    type=2):
         model = surcharge_load.Surcharge_Load()
-        x, y, z = model.strip(float(q), float(x_load), float(width), float(H), float(start), float(end))
+        x, y, z = model.strip(float(q), float(x_load), float(width), float(H),
+                              float(start), float(end), float(type))
         plt = plot.Plot()
         return plt.pcolor(x, y, z)
