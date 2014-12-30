@@ -17,9 +17,6 @@
                         <input type="submit" class="btn btn-primary" value="Analyze"><br>
                     </div>
                 </div>
-                <hr>
-                <h4>Doc</h4>
-                ${doc}
             </form>
         </div>
         <div id='plot' class="col-md-6">

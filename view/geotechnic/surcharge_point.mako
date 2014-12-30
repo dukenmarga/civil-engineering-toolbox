@@ -17,9 +17,6 @@
                     </div>
                 </div>
             </form>
-            <hr>
-            <h4>Doc</h4>
-            ${doc}
         </div>
         <div id='plot' class="col-md-6">
             <img src="data:image/png;base64,${plot_image}" width="640" height="480" border="0" />
