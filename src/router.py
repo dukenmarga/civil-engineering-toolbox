@@ -1,5 +1,6 @@
 import cherrypy
 from controller.structure import steel_profile
+from controller.structure import earthquake
 from controller.geotechnic import surcharge_load
 from controller.math import converter
 from controller.about import about
@@ -16,6 +17,9 @@ def setup():
                    controller=a, action="iwf")
     router.connect(name='structure_steel_profile', route='/structure/steel-profile/angle',
                    controller=a, action="angle")
+    a = earthquake.Earthquake()
+    router.connect(name='earthquake_response_spectrum', route='/structure/earthquake/response-spectrum',
+                   controller=a, action="response_spectrum")
     #GEOTECHNIC
     a = surcharge_load.Surcharge_Load()
     router.connect(name='surcharge_point', route='/geotechnic/surcharge/point-load',

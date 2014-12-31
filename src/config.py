@@ -1,4 +1,5 @@
 import os
+import src.error_404 as err
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 def setup():
@@ -15,5 +16,6 @@ def setup():
             'server.log_to_screen' : False,
             'server.show_tracebacks' : False,
             'autoreload.on' : False,
+            'error_page.404' : err.error_404,
         },
     }

@@ -13,6 +13,10 @@
                     <li><a href="/structure/steel-profile">
                         <i class="fa fa-table"></i>
                         Steel Section Tables</a></li>
+                    <li><a href="/structure/earthquake/response-spectrum">
+                        <i class=""></i>
+                        Response Spectrum</a>
+                    </li>
                     </ul>
                 </li>
                 <li class="dropdown">
