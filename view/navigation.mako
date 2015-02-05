@@ -17,6 +17,10 @@
                         <i class=""></i>
                         Response Spectrum</a>
                     </li>
+                    <li><a href="/structure/slab/two-ways">
+                        <i class=""></i>
+                        Slab Reinforcement</a>
+                    </li>
                     </ul>
                 </li>
                 <li class="dropdown">
