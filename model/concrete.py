@@ -1,5 +1,6 @@
 import math
 import numpy as np
+
 class Concrete:
     def __init__(self):
         pass
