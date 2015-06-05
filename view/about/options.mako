@@ -2,80 +2,27 @@
 
 <%block name="content">
     <h4>Options</h4>
-    <p>This page is intended to store preferred options value that will
+    <div class="alert alert-info" role="alert">
+    This page is intended to store preferred options value that will
         fill your input form. This value will be applied only for your own browser.
         You can override this value in input form each time you use different
         application.
-    </p>
+    </div>
     <form role="form" action="options/save" method="get">
         <div class="row col-md-6">
-        <h4>Reinforced Concrete Structure</h4>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="fc">Compressive Strength (fc')</label>
-                 </div>
-                <div class="col-md-6">
-                    <input type="text" name="fc" id="fc" value="${fc.value}"> MPa
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="Ec">Young Modulus (Ec)</label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" name="Ec" id="Ec" value="${Ec.value}"> MPa
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="fyr">Reinforcement Tensile Strength (fyr)</label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" name="fyr" id="fyr" value="${fyr.value}"> MPa
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="conc_unit_weight">Concrete Unit Weight</label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" name="conc_unit_weight" id="conc_unit_weight" value="${conc_unit_weight.value}"> kg/m3
-                </div>
-            </div>
+        <h4>Reinforced Concrete</h4>
+            ${text("fc", "Compressive Strength (fc)", fc.value, "MPa")}
+            ${text("fyr", "Reinforcement Tensile Strength (fyr)", fyr.value, "MPa")}
+            ${text("Ec", "Young Modulus (Ec)", Ec.value, "MPa")}
+            ${text("conc_unit_weight", "Concrete Unit Weight", conc_unit_weight.value, "kg/m3")}
+            ${text("conc_poisson_ratio", "Possion's Ratio", conc_poisson_ratio.value, "")}
         <hr>
-        <strong><i>Steel Structure</i></strong>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="fys">Yield Tensile Strength (fys)</label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" name="fys" id="fys" value="${fys.value}"> MPa
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="fus">Ultimate Tensile Strength (fus)</label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" name="fus" id="fus" value="${fus.value}"> MPa
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="steel_unit_weight">Steel Unit Weight</label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" name="steel_unit_weight" id="steel_unit_weight" value="${steel_unit_weight.value}"> kg/m3
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="Es">Young Modulus (Es)</label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" name="Es" id="Es" value="${Es.value}"> MPa
-                </div>
-            </div>
+        <h4>Steel</h4>
+            ${text("fys", "Yield Tensile Strength (fys)", fys.value, "MPa")}
+            ${text("fus", "Ultimate Tensile Strength (fus)", fus.value, "MPa")}
+            ${text("Es", "Young Modulus (Es)", Es.value, "MPa")}
+            ${text("steel_unit_weight", "Steel Unit Weight", steel_unit_weight.value, "kg/m3")}
+            ${text("steel_poisson_ratio", "Possion's Ratio", steel_poisson_ratio.value, "")}
             <hr>
         </div>
         <div class="row col-md-6">
@@ -89,3 +36,14 @@
         </div>
     </form>
 </%block>
+
+<%def name="text(id, description, val, unit)">
+    <div class="row">
+        <div class="col-md-6">
+            ${description}
+         </div>
+        <div class="col-md-6">
+            <input type="text" name="${id}" id="${id}" value="${val}"> ${unit}
+        </div>
+    </div>
+</%def>

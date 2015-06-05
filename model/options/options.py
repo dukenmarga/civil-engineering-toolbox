@@ -11,11 +11,13 @@ class Options:
             'fyr': 400,
             'Ec': '{0:.2f}'.format(4700*math.sqrt(fc)),
             'conc_unit_weight': 2400,
+            'conc_poisson_ratio': 0.2,
             #Steel structure
             'fys': 240,
             'fus': 390,
             'Es': 200000,
             'steel_unit_weight': 7850,
+            'steel_poisson_ratio': 0.3,
         }
 
     def set_options(self, kwargs):
