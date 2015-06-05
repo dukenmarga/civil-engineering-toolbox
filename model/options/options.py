@@ -9,12 +9,12 @@ class Options:
             #Reinforced concrete
             'fc': fc,
             'fyr': 400,
-            'Gc': '{0:.2f}'.format(4700*math.sqrt(fc)),
-            'Gs': 200000,
+            'Ec': '{0:.2f}'.format(4700*math.sqrt(fc)),
             'conc_unit_weight': 2400,
             #Steel structure
             'fys': 240,
             'fus': 390,
+            'Es': 200000,
             'steel_unit_weight': 7850,
         }
 

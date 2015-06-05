@@ -1,6 +1,6 @@
 import cherrypy
 import math
-import model.core.geometric as geometric
+import model.material.geometric as geometric
 from sympy import Point, Polygon
 
 

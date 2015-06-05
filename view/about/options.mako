@@ -20,10 +20,10 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="Gc">Shear Modulus (Gc)</label>
+                    <label for="Ec">Young Modulus (Ec)</label>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" name="Gc" id="Gc" value="${Gc.value}"> MPa
+                    <input type="text" name="Ec" id="Ec" value="${Ec.value}"> MPa
                 </div>
             </div>
             <div class="row">
@@ -66,6 +66,14 @@
                 </div>
                 <div class="col-md-6">
                     <input type="text" name="steel_unit_weight" id="steel_unit_weight" value="${steel_unit_weight.value}"> kg/m3
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="Es">Young Modulus (Es)</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="Es" id="Es" value="${Es.value}"> MPa
                 </div>
             </div>
             <hr>
