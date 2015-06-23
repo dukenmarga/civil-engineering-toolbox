@@ -104,8 +104,39 @@ class Concrete:
         beta1 = self.beta1(fc)
         return 0.85*beta1*fc/fyr*600/(600+fyr)
 
+    def rho(self, n, diameter, width, height):
+        '''
+        :param n: number of tension reinforcement
+        :param diameter: reinforcement diameter
+        :param width: width of concrete
+        :param height: height of concrete
+        :return: ratio area of reinforcement to area of concrete
+        '''
+        As = self.As(n, diameter)
+        Ac = width*height
+        return As/Ac
+
     def rho_max(self, fc, fyr):
+        '''
+        :param fc: concrete compressive strength
+        :param fyr: reinforcement yield strength
+        :return: Allowable ratio area of reinforcement to area of concrete
+        '''
         return 0.75*self.rho_balance(fc, fyr)
 
-    def phi(self, eps_t):
-        return 0.65 + (eps_t-0.002)*250/3
+    def eps_s(self, d, c, eps_cu=0.003):
+        '''
+        :param d: Distance from center of tensile reinforcement to the further
+        compressive concrete
+        :param c: Distance neutral axis measured from most extreme compressive
+        edge to neutral axis
+        :param eps_cu: Concrete ultimate strain (default=0.003)
+        :return: Tensile reinforcement strain
+        '''
+        return (d-c)/c*eps_cu
+
+    def neutral_axis_balance(self, eps_cu, eps_y, d):
+        return (eps_cu)/(eps_cu + eps_y)*d
+
+    def phi(self, eps_s):
+        return 0.65 + (eps_s-0.002)*250/3
