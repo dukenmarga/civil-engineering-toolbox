@@ -34,6 +34,10 @@ class Options:
             raise cherrypy.HTTPRedirect("/options")
         return cookie
 
+    def get_cookie(self, key):
+        cookie = cherrypy.request.cookie
+        return cookie.get(key)
+
     def reset_options(self):
         cookie = cherrypy.response.cookie
         self.set_options(self.default_options)
