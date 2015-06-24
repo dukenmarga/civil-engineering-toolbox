@@ -26,8 +26,8 @@ class Concrete:
         """
         fyr = val.get('fyr')  # MPa
         fc = val.get('fc')  # MPa
-        width = val.get('b')  # mm
-        height = val.get('h')  # mm
+        width = val.get('width')  # mm
+        height = val.get('height')  # mm
         cover = val.get('cover')  # mm
         n = val.get('n')  # number
         diameter = val.get('diameter')  # mm
@@ -124,7 +124,15 @@ class Concrete:
         '''
         return 0.75*self.rho_balance(fc, fyr)
 
-    def eps_s(self, d, c, eps_cu=0.003):
+    def As_max(self, fc, fyr, height, width):
+        return self.rho_max(fc, fyr) * height * width
+
+    def As_min(self, fc, fyr, height, width, cover):
+        As_min1 = 0.25*math.sqrt(fc)/fyr*(height-cover)*width
+        As_min2 = 1.4/fyr*(height-cover)*width
+        return max(As_min1, As_min2)
+
+    def eps_s(self, d, As, fc, fyr, width, eps_cu=0.003):
         '''
         :param d: Distance from center of tensile reinforcement to the further
         compressive concrete
@@ -133,10 +141,19 @@ class Concrete:
         :param eps_cu: Concrete ultimate strain (default=0.003)
         :return: Tensile reinforcement strain
         '''
-        return (d-c)/c*eps_cu
+        neutral_axis = self.neutral_axis_balance2(As, fyr, fc, width)
+        return (d-neutral_axis)/neutral_axis*eps_cu
 
     def neutral_axis_balance(self, eps_cu, eps_y, d):
         return (eps_cu)/(eps_cu + eps_y)*d
 
+    def neutral_axis_balance2(self, As, fyr, fc, width):
+        return self.a(As, fyr, fc, width) / self.beta1(fc)
+
     def phi(self, eps_s):
-        return 0.65 + (eps_s-0.002)*250/3
+        if eps_s >= 0.005:
+            return 0.9
+        elif eps_s <=0.002:
+            return 0.7
+        else:
+            return 0.65 + (eps_s-0.002)*250/3

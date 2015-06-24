@@ -21,6 +21,10 @@
                         <i class=""></i>
                         Slab Reinforcement</a>
                     </li>
+                    <li><a href="/structure/concrete/flexural-analysis">
+                        <i class=""></i>
+                        Concrete Flexural Analysis</a>
+                    </li>
                     </ul>
                 </li>
                 <li class="dropdown">

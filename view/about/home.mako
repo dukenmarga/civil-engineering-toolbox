@@ -7,6 +7,9 @@
             <li>Structure
                 <ul>
                     <li><a href="/structure/steel-profile">Steel Section Tables</a></li>
+                    <li><a href="/structure/earthquake/response-spectrum">Response Spectrum</a></li>
+                    <li><a href="/structure/slab/two-ways">Two ways slab</a></li>
+                    <li><a href="/structure/concrete/flexural-analysis">Concrete Flexural Analysis</a></li>
                 </ul>
             </li>
             <li>Geotechnic

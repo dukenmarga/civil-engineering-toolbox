@@ -2,6 +2,7 @@ import cherrypy
 from controller.structure import steel_profile
 from controller.structure import earthquake
 from controller.structure import slab
+from controller.structure import concrete
 from controller.geotechnic import surcharge_load
 from controller.math import converter
 from controller.about import about
@@ -24,6 +25,9 @@ def setup():
     a = slab.Slab()
     router.connect(name='slab', route='/structure/slab/two-ways',
                    controller=a, action="two_ways")
+    a = concrete.Concrete()
+    router.connect(name='flexural_analysis', route='/structure/concrete/flexural-analysis',
+                   controller=a, action="flexural_analysis")
     #GEOTECHNIC
     a = surcharge_load.Surcharge_Load()
     router.connect(name='surcharge_point', route='/geotechnic/surcharge/point-load',

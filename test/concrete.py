@@ -39,14 +39,14 @@ class Concrete(unittest.TestCase):
         val = {
             'fyr': 420,  #MPa
             'fc': 20,  #MPa
-            'b': 250,  #mm
-            'h': 565,  #mm
+            'width': 250,  #mm
+            'height': 565,  #mm
             'cover': 65,  #mm
             'n': 4,  #number
             'diameter': 13,  #mm
         }
         self.assertAlmostEqual(float(
-            self.c.Mn(**val)),105645164.45,
+            self.c.Mn(**val)),105645164.45, #N.mm
             places=2, msg="NOT OK")
 
     def test_beta1(self):
