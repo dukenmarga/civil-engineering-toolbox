@@ -15,7 +15,7 @@
                         Steel Section Tables</a></li>
                     <li><a href="/structure/concrete/slab-two-ways">
                         <i class=""></i>
-                        Concrete Slab Reinforcement</a>
+                        Concrete Two Ways Slab</a>
                     </li>
                     <li><a href="/structure/concrete/flexural-analysis">
                         <i class=""></i>
