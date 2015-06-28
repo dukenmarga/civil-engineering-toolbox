@@ -13,17 +13,17 @@ def setup():
 
     #STRUCTURE
     a = steel_profile.Steel_Profile()
-    router.connect(name='structure_steel_profile', route='/structure/steel-profile',
+    router.connect(name='structure_steel_profile', route='/structure/steel/profile',
                    controller=a, action="index")
-    router.connect(name='structure_steel_profile', route='/structure/steel-profile/iwf',
+    router.connect(name='structure_steel_profile', route='/structure/steel/profile/iwf',
                    controller=a, action="iwf")
-    router.connect(name='structure_steel_profile', route='/structure/steel-profile/angle',
+    router.connect(name='structure_steel_profile', route='/structure/steel/profile/angle',
                    controller=a, action="angle")
     a = earthquake.Earthquake()
     router.connect(name='earthquake_response_spectrum', route='/structure/earthquake/response-spectrum',
                    controller=a, action="response_spectrum")
     a = slab.Slab()
-    router.connect(name='slab', route='/structure/slab/two-ways',
+    router.connect(name='slab', route='/structure/concrete/slab-two-ways',
                    controller=a, action="two_ways")
     a = concrete.Concrete()
     router.connect(name='flexural_analysis', route='/structure/concrete/flexural-analysis',
