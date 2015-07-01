@@ -53,7 +53,7 @@ class Concrete:
                  diameter=10, dy=40, dx=50):
         template = view.lookup.get_template('structure/concrete_slab.mako')
         model = concrete_slab.Slab()
-        Mlx, Mly, Mtx, Mty, slx, sly, stx, sty = model.marcus_method(
+        Mlx, Mly, Mtx, Mty, slx, sly, stx, sty, error = model.marcus_method(
                 float(ly), float(lx), float(t),
                 float(dl), float(ll), include_self_weight, float(kdl),
                 float(kll), float(conc_unit_weight), float(fc), float(fus),
@@ -74,14 +74,15 @@ class Concrete:
             'diameter': diameter,
             'dy': dy,
             'dx': dx,
-            'Mlx': Mlx,
-            'Mly': Mly,
-            'Mtx': Mtx,
-            'Mty': Mty,
-            'slx': slx,
-            'sly': sly,
-            'stx': stx,
-            'sty': sty,
+            'Mlx': float('{0:.2f}'.format(Mlx)),
+            'Mly': float('{0:.2f}'.format(Mly)),
+            'Mtx': float('{0:.2f}'.format(Mtx)),
+            'Mty': float('{0:.2f}'.format(Mty)),
+            'slx': int(slx),
+            'sly': int(sly),
+            'stx': int(stx),
+            'sty': int(sty),
+            'error': error,
         }
 
 

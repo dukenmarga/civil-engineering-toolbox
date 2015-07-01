@@ -4,7 +4,7 @@
     <h4>Slab Reinforcement</h4>
     <div class="row">
         <div class="col-md-6">
-            <form role="form" action="/structure/slab/two-ways" method="get">
+            <form role="form" action="/structure/concrete/slab-two-ways" method="get">
                 ${row("ly", ly, "Long span (ly)", "m")}
                 ${row("lx", lx, "Short span (lx)", "m")}
                 ${row("t", t, "Slab Thickness (t)", "m")}
@@ -28,10 +28,11 @@
         </div>
         <div id='plot' class="col-md-6">
             <span class="label label-danger">Important</span> This program is not completed yet.<br>
-            Mlx = ${Mlx} KNm, <strong>${diameter}@${slx}</strong><br>
-            Mly = ${Mly} KNm, <strong>${diameter}@${sly}</strong><br>
-            Mtx = ${Mtx} KNm, <strong>${diameter}@${stx}</strong><br>
-            Mty = ${Mty} KNm, <strong>${diameter}@${sty}</strong><br>
+            Mlx = ${Mlx/1e6} KNm, <strong>${diameter} @ ${slx}</strong><br>
+            Mly = ${Mly/1e6} KNm, <strong>${diameter} @ ${sly}</strong><br>
+            Mtx = ${Mtx/1e6} KNm, <strong>${diameter} @ ${stx}</strong><br>
+            Mty = ${Mty/1e6} KNm, <strong>${diameter} @ ${sty}</strong><br>
+            <span class="label label-danger">${error}</span><br>
         </div>
     </div>
 </%block>

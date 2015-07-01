@@ -247,7 +247,10 @@ class Slab:
                 },
             },
         }
-        X = ly/lx
+        X = float(ly)/lx
+        if X > 2.5:
+            return self.error(0, 0, 0, 0,
+                  "Error: One-way slab!")
         opt = str(round(X,1))
         sw = t*ly*lx*conc_unit_weight # kg, slab self weight
         qu = kdl*(dl+sw) + kll*ll # kg
@@ -270,51 +273,68 @@ class Slab:
         except:
             mty = 0
 
-        Mlx = 0.001*qu*lx*X**2*mlx/100 #KN.m
-        Mly = 0.001*qu*lx*X**2*mly/100 #KN.m
-        Mtx = 0.001*qu*lx*X**2*mtx/100 #KN.m
-        Mty = 0.001*qu*lx*X**2*mty/100 #KN.m
+        Mlx = 0.001*qu*lx*X**2*mlx*10000 #N.mm
+        Mly = 0.001*qu*lx*X**2*mly*10000 #N.mm
+        Mtx = 0.001*qu*lx*X**2*mtx*10000 #N.mm
+        Mty = 0.001*qu*lx*X**2*mty*10000 #N.mm
 
         phi = 0.8
-        t = t*1000
+        t = t*1000 # mm
+        rho_min = 0.0018/2
+
         # Mnlx
         Mn = Mlx/phi
-        Rn = Mn*10**6/(1000*(t-dx)**2)
+        Rn = Mn/(1000*(t-dx)**2) #N/mm2
         m = fus/(0.85*fc)
-        rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
-        rho_min = 1.4/fus
+        try:
+            rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
+        except:
+            return self.error(Mlx, Mly, Mtx, Mty,
+                              "Change slab thickness!")
         rho = max(rho, rho_min)
         As = rho*1000*(t-dx)
         slx = 1000*math.pi*diameter**2/4/As
 
         # Mnly
         Mn = Mly/phi
-        Rn = Mn*10**6/(1000*(t-dy)**2)
+        Rn = Mn/(1000*(t-dx)**2) #N/mm2
         m = fus/(0.85*fc)
-        rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
-        rho_min = 1.4/fus
+        try:
+            rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
+        except:
+            return self.error(Mlx, Mly, Mtx, Mty,
+                              "Change slab thickness!")
         rho = max(rho, rho_min)
         As = rho*1000*(t-dx)
         sly = 1000*math.pi*diameter**2/4/As
 
         # Mntx
         Mn = Mtx/phi
-        Rn = Mn*10**6/(1000*(t-dx)**2)
+        Rn = Mn/(1000*(t-dx)**2) #N/mm2
         m = fus/(0.85*fc)
-        rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
-        rho_min = 1.4/fus
+        try:
+            rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
+        except:
+            return self.error(Mlx, Mly, Mtx, Mty,
+                  "Change slab thickness!")
         rho = max(rho, rho_min)
         As = rho*1000*(t-dx)
         stx = 1000*math.pi*diameter**2/4/As
 
         # Mnlx
         Mn = Mty/phi
-        Rn = Mn*10**6/(1000*(t-dy)**2)
+        try:
+            Rn = Mn/(1000*(t-dx)**2) #N/mm2
+        except:
+            return self.error(Mlx, Mly, Mtx, Mty,
+                              "Change slab thickness!")
         m = fus/(0.85*fc)
         rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
-        rho_min = 1.4/fus
         rho = max(rho, rho_min)
         As = rho*1000*(t-dx)
         sty = 1000*math.pi*diameter**2/4/As
 
-        return Mlx, Mly, Mtx, Mty, slx, sly, stx, sty
+        return Mlx, Mly, Mtx, Mty, slx, sly, stx, sty, ""
+
+    def error(self, Mlx, Mly, Mtx, Mty, error):
+        return Mlx, Mly, Mtx, Mty, 0, 0, 0, 0, error
