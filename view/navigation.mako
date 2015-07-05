@@ -1,5 +1,5 @@
 <div class="row">
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation">
      <a class="navbar-brand" href="#">civ-eng-toolbox</a>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <!-- LEFT -->
