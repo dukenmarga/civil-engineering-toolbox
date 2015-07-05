@@ -1,6 +1,7 @@
 from src import view
 from model.options import options
 import cherrypy
+from src import startup
 
 class About:
     def index(self):
@@ -13,6 +14,7 @@ class About:
         template = view.lookup.get_template('about/technology.mako')
         return template.render()
     def home(self):
+        startup.check_options_value()
         template = view.lookup.get_template('about/home.mako')
         return template.render()
     def options(self):
