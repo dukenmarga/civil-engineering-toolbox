@@ -1,7 +1,6 @@
 import cherrypy
 from controller.structure import steel_profile
 from controller.structure import earthquake
-from controller.structure import slab
 from controller.structure import concrete
 from controller.geotechnic import surcharge_load
 from controller.math import converter
@@ -13,21 +12,20 @@ def setup():
 
     #STRUCTURE
     a = steel_profile.Steel_Profile()
-    router.connect(name='structure_steel_profile', route='/structure/steel-profile',
+    router.connect(name='structure_steel_profile', route='/structure/steel/profile',
                    controller=a, action="index")
-    router.connect(name='structure_steel_profile', route='/structure/steel-profile/iwf',
+    router.connect(name='structure_steel_profile', route='/structure/steel/profile/iwf',
                    controller=a, action="iwf")
-    router.connect(name='structure_steel_profile', route='/structure/steel-profile/angle',
+    router.connect(name='structure_steel_profile', route='/structure/steel/profile/angle',
                    controller=a, action="angle")
     a = earthquake.Earthquake()
     router.connect(name='earthquake_response_spectrum', route='/structure/earthquake/response-spectrum',
                    controller=a, action="response_spectrum")
-    a = slab.Slab()
-    router.connect(name='slab', route='/structure/slab/two-ways',
-                   controller=a, action="two_ways")
     a = concrete.Concrete()
     router.connect(name='flexural_analysis', route='/structure/concrete/flexural-analysis',
                    controller=a, action="flexural_analysis")
+    router.connect(name='slab_two_ways_design', route='/structure/concrete/slab-two-ways',
+                   controller=a, action="slab_two_ways_design")
     #GEOTECHNIC
     a = surcharge_load.Surcharge_Load()
     router.connect(name='surcharge_point', route='/geotechnic/surcharge/point-load',

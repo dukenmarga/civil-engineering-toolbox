@@ -17,14 +17,7 @@
         ${css_file("jquery-ui/jquery-ui.min.css")}
         ${css_file("jquery-ui/jquery-ui.theme.min.css")}
         ${css_file("css/custom.css")}
-        <style>
-        @font-face {
-          font-family: 'PT Sans';
-          font-style: normal;
-          font-weight: 400;
-          src: local('PT Sans'), local('PTSans-Regular'), url(/static/css/pt-sans.woff) format('woff');
-        }
-        </style>
+        ${css_file("css/cousine.css")}
         <%block name="css">
         </%block>
 
@@ -34,17 +27,7 @@
         ${js_file("js/jquery-table-sorter.min.js")}
         ${js_file("js/jquery-floatThead.min.js")}
         ${js_file("jquery-ui/jquery-ui.min.js")}
-        ${js_file("mathjax/MathJax.js?config=TeX-AMS-MML_SVG")}
         ${js_file("js/global.js")}
-        <script>
-            MathJax.Hub.Config({
-                SVG: {
-                    scale: 100,
-                    font: "STIX-Web",
-                    blacker: 2
-                }
-            });
-        </script>
         <%block name="javascript">
         </%block>
     </head>

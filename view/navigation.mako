@@ -1,5 +1,5 @@
 <div class="row">
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation">
      <a class="navbar-brand" href="#">civ-eng-toolbox</a>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <!-- LEFT -->
@@ -10,20 +10,20 @@
                         <i class="glyphicon glyphicon-tower"></i>
                         Structure <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                    <li><a href="/structure/steel-profile">
+                    <li><a href="/structure/steel/profile">
                         <i class="fa fa-table"></i>
                         Steel Section Tables</a></li>
-                    <li><a href="/structure/earthquake/response-spectrum">
+                    <li><a href="/structure/concrete/slab-two-ways">
                         <i class=""></i>
-                        Response Spectrum</a>
-                    </li>
-                    <li><a href="/structure/slab/two-ways">
-                        <i class=""></i>
-                        Slab Reinforcement</a>
+                        Concrete Two Ways Slab</a>
                     </li>
                     <li><a href="/structure/concrete/flexural-analysis">
                         <i class=""></i>
                         Concrete Flexural Analysis</a>
+                    </li>
+                    <li><a href="/structure/earthquake/response-spectrum">
+                        <i class=""></i>
+                        Response Spectrum</a>
                     </li>
                     </ul>
                 </li>
@@ -71,11 +71,6 @@
                 </li>
             </ul>
             <!-- RIGHT -->
-            <form class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-            </form>
         </div><!-- /.navbar-collapse -->
     </nav>
 </div>
