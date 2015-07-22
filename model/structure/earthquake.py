@@ -4,7 +4,7 @@ class Earthquake:
             'properties': []
         }
     def response_spectrum(self, ss, s1, soil_class):
-        """ Generate and return steel profile table for H-beam (IWF)
+        """ Generate response spectrum based on ASCE 7-2010
         """
 
         self.data = {
@@ -82,13 +82,13 @@ class Earthquake:
         t0 = 0.2*sd1/sds
         t_ = ts = sd1/sds
 
-        # matriks
+        # calculate another point
         x = [0, t0, ts]
         y = [s0, sds, sds]
         while t_ <= 8:
             x.append(t_)
             y.append(sd1/t_)
-            t_ = t_ + 0.1
+            t_ += 0.1
 
         # data[]
         # data['ss'] = ss

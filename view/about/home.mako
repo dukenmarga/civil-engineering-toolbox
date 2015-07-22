@@ -1,12 +1,15 @@
 <%inherit file="../base.mako"/>
 
 <%block name="content">
-    <h4>List of Applications</h4>
     <div class="col-md-8">
+        <h4>List of Applications</h4>
         <ul>
             <li>Structure
                 <ul>
-                    <li><a href="/structure/steel-profile">Steel Section Tables</a></li>
+                    <li><a href="/structure/steel/profile">Steel Section Tables</a></li>
+                    <li><a href="/structure/concrete/slab-two-ways">Concrete Two Ways Slab</a></li>
+                    <li><a href="/structure/concrete/flexural-analysis">Concrete Flexural Analysis</a></li>
+                    <li><a href="/structure/earthquake/response-spectrum">Response Spectrum</a></li>
                 </ul>
             </li>
             <li>Geotechnic
