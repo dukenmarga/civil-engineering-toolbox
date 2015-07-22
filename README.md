@@ -58,35 +58,19 @@ of these files as Administrator (right click then choose `Run as Administrator`)
 in case your computer doesn't allow installing program using non-privileged user.
 
 ## Windows 32-bit
-* Download <a href="https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi">Python 2.7+</a>
-* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/Mako-1.0.0.win32-py2.7.exe">Mako 1.0</a>
-* Download <a href="http://download.cherrypy.org/cherrypy/3.2.2/CherryPy-3.2.2.win32.exe">CherryPy 3.2</a>
-* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/numpy-MKL-1.9.1.win32-py2.7.exe">Numpy MKL</a>
-* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/python-dateutil-2.2.win32-py2.7.exe">Dateutil</a>
-* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/pytz-2014.7.win32-py2.7.exe">Pytz</a>
-* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/pyparsing-2.0.3.win32-py2.7.exe">pyparsing</a>
-* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/six-1.8.0.win32-py2.7.exe">six</a>
-* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ekvtz8ci/setuptools-5.4.2.win32-py2.7.exe">Setuptools</a>
-* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/ensjsj6n/matplotlib-1.4.2.win32-py2.7.exe">Matplotlib</a>
-* Download <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/girnt9fk/sympy-0.7.6.win32-py2.7.exe">SymPy</a>
-* Install all 11 softwares above in sequence. When installing Python, on
+* Download <a href="https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi">Python 2.7+</a>
+* Install Python language above. When installing the software, on
 customization option, ensure that you check item "Add python.exe to Path" to
 "Will be installed on local hard drive" (see image below). If you do not enable this option, you
 will not be able to complete the next step. 
 <img src="http://duken.info/cet/img/customize_python.png" align="center" hspace="10" vspace="6">
-* Download Routes 2.0 (http://duken.info/cet/routes/Routes-2.0.zip)
-    * **Connected to internet**. Extract and unzip Routes, then double click `install.cmd`
-      Please wait until installation has completed. If you are connected to internet,
-      Routes will download a file from internet as its
-      dependency. If you are offline when installing this, follow the next step.
-    * **Offline**. You must download additional file named repoze.lru 
-      (http://duken.info/cet/repoze.lru/repoze.lru-0.6.zip). After installing
-      Routes above (and failed connected to internet), install repoze.lru
-      after extracting it then double click `install.cmd`.
-  You can safely delete these folders after completing the installation.
-* Download civil-engineering-toolbox (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
+* Download **civil-engineering-toolbox** (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
 * Extract and unzip it into one of your directory.
-* Double click `Main.py`. A black window will be opened and hang there as an
+* Double click `install_windows.cmd`. This script will install required software
+to run civil-engineering-toolbox. Right click and `Run as administrator` if possible.
+This process will require internet connection.
+* Ensure that there are no errors during installation.
+* Double click `Main.py`. A black window will be opened and hang in there as an
 indication that your program is started correctly.
 * Open your browser to access http://127.0.0.1:1234
 * Happy designing :)
