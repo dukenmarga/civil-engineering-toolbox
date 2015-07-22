@@ -17,20 +17,20 @@ class Concrete:
         Gc = Ec/(2*(1+concrete_poisson_ratio))  # MPa
         return Gc
 
-    def Mn(self, **val):
+    def Mn(self, fyr, fc, height, width, n, diameter, cover):
         """
         Calculate nominal moment strength of reinforced concrete
         of rectangular area
         :param val: Dictionary of passing value of material
         :return: Nominal moment strength, Mn (KN)
         """
-        fyr = val.get('fyr')  # MPa
-        fc = val.get('fc')  # MPa
-        width = val.get('width')  # mm
-        height = val.get('height')  # mm
-        cover = val.get('cover')  # mm
-        n = val.get('n')  # number
-        diameter = val.get('diameter')  # mm
+        #fyr = val.get('fyr')  # MPa
+        #fc = val.get('fc')  # MPa
+        #width = val.get('width')  # mm
+        #height = val.get('height')  # mm
+        #cover = val.get('cover')  # mm
+        #n = val.get('n')  # number
+        #diameter = val.get('diameter')  # mm
 
         As = self.As(n, diameter)  # mm2
         a = self.a(As, fyr, fc, width)  # mm
