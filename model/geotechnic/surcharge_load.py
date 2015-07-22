@@ -1,5 +1,6 @@
 import math
 import numpy as np
+
 class Surcharge_Load:
     """ Generate additional horizontal load due to
         surcharge load (e.g. Point load,
@@ -41,6 +42,7 @@ class Surcharge_Load:
                 Z.append(z)
         Z = np.array(Z).reshape((len(y), len(x))).transpose()
         return X, -Y, -Z
+
     def strip(self, q, x_load, width, H, start, end, type):
         """ Strip load
         """

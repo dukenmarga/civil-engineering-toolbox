@@ -1,33 +1,41 @@
 from src import view
 from model.material import concrete
 from model.structure import concrete_slab
+import cherrypy
 
 class Concrete:
     def index(self):
         pass
-    def flexural_analysis(self, fc=20, fyr=420, height=565, width=250, n=4,
-                          diameter=13, cover=65):
+
+    def flexural_analysis(self, **var):
+        # Prepare view & model object
         template = view.lookup.get_template('structure/concrete_flexural_analysis.mako')
         model = concrete.Concrete()
-        val = {
-            'fyr': float(fyr),  #MPa
-            'fc': float(fc),  #MPa
-            'width': float(width),  #mm
-            'height': float(height),  #mm
-            'cover': float(cover),  #mm
-            'n': float(n),  #number
-            'diameter': float(diameter),  #mm
-        }
-        mn = model.Mn(**val)
-        rho = model.rho(float(n), float(diameter), float(width), float(height))
-        rho_max = model.rho_max(float(fc), float(fyr))
-        As = model.As(float(n), float(diameter))
-        As_max = model.As_max(float(fc), float(fyr), float(height), float(width))
-        As_min = model.As_min(float(fc), float(fyr), float(height), float(width),
-                              float(cover))
-        eps_s = model.eps_s(float(height)-float(cover), As, float(fc), float(fyr), float(width))
+
+        # Prepare url params & cookie as default value
+        param = cherrypy.request.params
+        cookie = cherrypy.request.cookie
+
+        # Get url parameter or set default variable (if None)
+        fyr = float(param.get('fyr') or cookie['fyr'].value)
+        fc = float(param.get('fc') or cookie['fc'].value)
+        height = float(param.get('height') or 565)
+        width = float(param.get('width') or 250)
+        n = int(param.get('n') or 4)
+        diameter = float(param.get('diameter') or 13)
+        cover = float(param.get('cover') or 65)
+
+        # Calculate
+        mn = model.Mn(fyr, fc, height, width, n, diameter, cover)
+        rho = model.rho(n, diameter, width, height)
+        rho_max = model.rho_max(fc, fyr)
+        As = model.As(n, diameter)
+        As_max = model.As_max(fc, fyr, height, width)
+        As_min = model.As_min(fc, fyr, height, width, cover)
+        eps_s = model.eps_s(height-cover, As, fc, fyr, width)
         phi = model.phi(eps_s)
 
+        # Prepare data to view
         data = {
             'fyr': fyr,  #MPa
             'fc': fc,  #MPa
@@ -47,17 +55,39 @@ class Concrete:
         }
 
         return template.render(**data)
-    def slab_two_ways_design(self, ly=4, lx=3, t=0.12, dl=100, ll=250,
-                 include_self_weight="Yes", kdl=1.2, kll=1.6,
-                 conc_unit_weight=2400, fc=25, fus=400, slab_type=1,
-                 diameter=10, dy=40, dx=50):
+
+    def slab_two_ways_design(self, **var):
+        # Prepare view & model object
         template = view.lookup.get_template('structure/concrete_slab.mako')
         model = concrete_slab.Slab()
+
+        # Prepare url params & cookie as default value
+        param = cherrypy.request.params
+        cookie = cherrypy.request.cookie
+
+        # Get url parameter or set default variable (if None)
+        ly = float(param.get('ly') or 4)
+        lx = float(param.get('lx') or 3)
+        t = float(param.get('t') or 0.12)
+        dl = float(param.get('dl') or 100)
+        ll = float(param.get('ll') or 250)
+        include_self_weight = param.get('include_self_weight') or 'Yes'
+        kdl = float(param.get('kdl') or 1.2)
+        kll = float(param.get('kll') or 1.6)
+        conc_unit_weight = float(param.get('conc_unit_weight') or cookie['conc_unit_weight'].value)
+        fc = float(param.get('fc') or cookie['fc'].value)
+        fus = float(param.get('fus') or cookie['fus'].value)
+        slab_type = param.get('slab_type') or '1'
+        diameter = float(param.get('diameter') or 10)
+        dy= float(param.get('dy') or 40)
+        dx= float(param.get('dx') or 50)
+
+        # Calculate
         Mlx, Mly, Mtx, Mty, slx, sly, stx, sty, error = model.marcus_method(
-                float(ly), float(lx), float(t),
-                float(dl), float(ll), include_self_weight, float(kdl),
-                float(kll), float(conc_unit_weight), float(fc), float(fus),
-                str(slab_type), float(diameter), float(dy), float(dx))
+                ly, lx, t, dl, ll, include_self_weight, kdl, kll,
+                conc_unit_weight, fc, fus, slab_type, diameter, dy, dx)
+
+        # Prepare data to view
         data = {
             'ly': ly,
             'lx': lx, #m
@@ -84,6 +114,5 @@ class Concrete:
             'sty': int(sty),
             'error': error,
         }
-
 
         return template.render(**data)

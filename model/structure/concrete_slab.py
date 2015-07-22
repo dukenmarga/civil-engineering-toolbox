@@ -1,21 +1,16 @@
-import cherrypy
 import math
 
 class Slab:
     def __init__(self):
-        self.data = {
-            'properties': []
-        }
-        cookie = cherrypy.request.cookie
-        self.mass_weight = float(cookie['conc_unit_weight'].value)  # kg/m3
-        self.fus = float(cookie['fus'].value)  # MPa
-        self.fc = float(cookie['fc'].value)  # MPa
-    def marcus_method(self, ly=4, lx=3, t=0.12, dl=100, ll=250,
-                 include_self_weight="Yes", kdl=1.2, kll=1.6,
-                 conc_unit_weight=2400, fc=25, fus=400, slab_type="1",
-                 diameter=10, dy=40, dx=50):
+        pass
+
+    def marcus_method(self, ly, lx, t, dl, ll,
+                 include_self_weight, kdl, kll,
+                 conc_unit_weight, fc, fus, slab_type,
+                 diameter, dy, dx):
         """ Generate and return steel profile table for H-beam (IWF)
         """
+
         # Hold table of coefficient
         table = {
             'Case1': { # None of the edges is fixed
@@ -247,7 +242,7 @@ class Slab:
                 },
             },
         }
-        X = float(ly)/lx
+        X = float(ly/lx)
         if X > 2.5:
             return self.error(0, 0, 0, 0,
                   "Error: One-way slab!")
