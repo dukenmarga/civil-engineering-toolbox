@@ -21,16 +21,15 @@ class Concrete:
         """
         Calculate nominal moment strength of reinforced concrete
         of rectangular area
-        :param val: Dictionary of passing value of material
+        :param fyr: Steel yield strength (MPa)
+        :param fc: Concrete strength (MPa)
+        :param width: Width of section (mm)
+        :param height: Height of section (mm)
+        :param cover: Concrete cover(mm)
+        :param n: Number of tension reinforcement
+        :param diameter: Diameter reinforcement (mm)
         :return: Nominal moment strength, Mn (KN)
         """
-        #fyr = val.get('fyr')  # MPa
-        #fc = val.get('fc')  # MPa
-        #width = val.get('width')  # mm
-        #height = val.get('height')  # mm
-        #cover = val.get('cover')  # mm
-        #n = val.get('n')  # number
-        #diameter = val.get('diameter')  # mm
 
         As = self.As(n, diameter)  # mm2
         a = self.a(As, fyr, fc, width)  # mm
