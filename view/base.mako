@@ -16,8 +16,8 @@
         ${css_file("font-awesome/css/font-awesome.min.css")}
         ${css_file("jquery-ui/jquery-ui.min.css")}
         ${css_file("jquery-ui/jquery-ui.theme.min.css")}
-        ${css_file("css/custom.css")}
         ${css_file("css/cousine.css")}
+        ${css_file("css/custom.css")}
         <%block name="css">
         </%block>
 
@@ -27,6 +27,8 @@
         ${js_file("js/jquery-table-sorter.min.js")}
         ${js_file("js/jquery-floatThead.min.js")}
         ${js_file("jquery-ui/jquery-ui.min.js")}
+        ${js_file("mathjax/MathJax.js")}
+        ${js_file("mathjax/TeX-AMS_HTML.js")}
         ${js_file("js/global.js")}
         <%block name="javascript">
         </%block>

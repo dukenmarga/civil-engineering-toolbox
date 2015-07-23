@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-md-6">
             <form role="form" action="/structure/concrete/flexural-analysis" method="get">
-                ${text("fc", fc, "Concrete strength (fc')", "MPa")}
-                ${text("fyr", fyr, "Reinf. yield tensile strength (fyr)", "MPa")}
+                ${text("fc", fc, "Concrete strength, $f_c'$", "MPa")}
+                ${text("fyr", fyr, "Reinf.yield strength ($f_{yr}$)", "MPa")}
                 ${text("height", height, "Height (h)", "mm")}
                 ${text("width", width, "Width (b)", "mm")}
                 ${text("n", n, "# (n)", "")}
@@ -21,15 +21,15 @@
         </div>
         <div id='plot' class="col-md-6">
             <img src="/static/picture/structure/rectangle concrete.svg" /><br>
-            rho = ${rho} <br>
-            rho max = ${rho_max} <br>
-            As_min = ${As_min} mm2<br>
-            As = ${As} mm2<br>
-            As_max = ${As_max} mm2<br>
-            eps_s = ${eps_s}<br>
-            phi = ${phi}<br>
+            $\rho$ = ${rho} <br>
+            $\rho_{max}$ = ${rho_max} <br>
+            $A_{s,min}$ = ${As_min} mm2<br>
+            $A_s$ = ${As} mm2<br>
+            $A_{s,max}$ = ${As_max} mm2<br>
+            $\varepsilon_s$ = ${eps_s}<br>
+            $\phi$ = ${phi}<br>
             Mn = ${mn} KNm<br>
-            phi*Mn = ${phi*mn} KNm<br>
+            $\phi$Mn = ${phi*mn} KNm<br>
         </div>
     </div>
 </%block>
