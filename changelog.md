@@ -1,5 +1,7 @@
 #civil-engineering-toolbox Changelog
 
+* 2.0.1
+    * Feature: Add multiplier coefficient for design response spectrum
 * 2.0.0
     * New App: Surcharge strip load
     * New App: Response spectrum design based on IBC 2006
