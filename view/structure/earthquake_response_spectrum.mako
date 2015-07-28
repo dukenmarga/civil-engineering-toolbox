@@ -8,6 +8,9 @@
                 ${row("ss", ss, "Ss", "")}
                 ${row("s1", s1, "S1", "")}
                 ${option("site_class", site_class, "Site Class", "")}
+                ${row("design_coefficient", design_coefficient,
+                "Design Coefficient ($S_{DS},S_{D1}$)",
+                "$\\times\\space S_{MS},S_{M1}$")}
                 <div class="row">
                     <div class="col-md-6">
                         <input type="submit" class="btn btn-primary" value="Analyze"><br>
