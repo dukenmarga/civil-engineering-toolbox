@@ -20,9 +20,10 @@ class Earthquake:
         ss = float(param.get('ss') or 1.3)
         s1 = float(param.get('s1') or 0.6)
         site_class = param.get('site_class') or "SD"
+        design_coefficient = float(param.get('design_coefficient') or 0.667)
 
         # Calculate & get the plot image
-        x, y = model.response_spectrum(ss, s1, site_class)
+        x, y = model.response_spectrum(ss, s1, site_class, design_coefficient)
         plt = plot.Plot()
         img = plt.line(x, y, "Natural Period, T, (second)",
                         "Spectral Acceleration (Sa)",
@@ -33,6 +34,7 @@ class Earthquake:
             'ss': ss,
             's1': s1, #m
             'site_class': site_class, #m
+            'design_coefficient': design_coefficient,
             'plot_image': img
         }
 

@@ -3,7 +3,7 @@ class Earthquake:
         self.data = {
             'properties': []
         }
-    def response_spectrum(self, ss, s1, soil_class):
+    def response_spectrum(self, ss, s1, soil_class, design_coefficient):
         """ Generate response spectrum based on ASCE 7-2010
         """
 
@@ -74,8 +74,8 @@ class Earthquake:
         sm1 = s1*fv
 
         # sds sd1 $s0
-        sds = sms*2/3
-        sd1 = sm1*2/3
+        sds = sms*design_coefficient
+        sd1 = sm1*design_coefficient
         s0 = sds/2.5
 
         # T0, Ts
