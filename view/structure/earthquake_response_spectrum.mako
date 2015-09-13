@@ -46,7 +46,7 @@
             <label for="${name}">${title}</label>
          </div>
         <div class="col-md-6">
-            <select id="${name}" name="${name}" class="form-control">
+            <select id="${name}" name="${name}" class="">
                 % if site_class=="SA":
                     <option value="SA" selected="selected">SA (Hard rock)</option>
                 % else:
@@ -60,7 +60,7 @@
                 % endif
 
                 % if site_class=="SC":
-                    <option value="SC" selected="selected">SC (Very dense soil and soft rock)</option>
+                    <option value="SC" selected="selected">SC (Very dense soil & soft rock)</option>
                 % else:
                     <option value="SC">SC (Very dense soil and soft rock)</option>
                 % endif
