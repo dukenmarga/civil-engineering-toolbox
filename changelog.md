@@ -1,5 +1,6 @@
 #civil-engineering-toolbox Changelog
-
+* 2.0.2
+    * Minor  : Fix style and typo
 * 2.0.1
     * Feature: Add multiplier coefficient for design response spectrum
 * 2.0.0

@@ -59,7 +59,7 @@
             <label for="${name}">${title}</label>
          </div>
         <div class="col-md-6">
-            <select id="${name}" name="${name}" class="form-control">
+            <select id="${name}" name="${name}" class="">
                 ${option(val, '1', "1 (None of the edges is fixed)")}
                 ${option(val, '2', "2 (All of four the edges are fixed)")}
                 ${option(val, '3', "3 (Only two adjacent edges is free)")}
