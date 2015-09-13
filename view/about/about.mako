@@ -9,16 +9,7 @@
     <p><strong>Website</strong> : <a href="https://github.com/dukenmarga/civil-engineering-toolbox">
             https://github.com/dukenmarga/civil-engineering-toolbox<br />
     </a>
-        <strong>Version</strong> : 2.0.0 (22 July 2015)
+        <strong>Version</strong> : 2.0.2 (13 Sept 2015)<br />
+        <strong>Programmer:</strong> <a href="http://duken.info">Duken Marga Turnip</a>
     </p>
-    <div class="col-md-4">
-        <strong>Programmer:</strong>
-        <ol>
-            <li data-toggle="popover" class="info" title="Duken Marga Turnip"
-                data-content="Civil Engineer<br>"
-                data-placement="auto">
-                <a href="http://duken.info">Duken Marga Turnip</a>
-            </li>
-        </ol>
-    </div>
 </%block>

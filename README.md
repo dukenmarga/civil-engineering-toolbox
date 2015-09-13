@@ -13,12 +13,20 @@ formula), or just to give quick estimation.
 
 #Features
 * Structure
-    * Steel Profile Table (IWF)
+    * Steel Section Table (IWF, Angle)
+    * Concrete Two Way Slab
+    * Concrete Flexural Analysis
+    * Response Spectrum
 * Geotechnic
     * Surcharge Point Load
     * Surcharge Strip Load
 * Math
-    * Unit Converter
+    * Unit Converter (Pressure, Force, Distance)
+
+#Documentation
+You can see the documentation (theories) in <a href="https://github.com/dukenmarga/civil-engineering-toolbox/releases">
+releases</a> page. Although the documentation has not completed yet, at least
+you know what calculation is being performed behind the scene.
 
 #Contribute
 You can contribute to make this software better, even if you know nothing about
@@ -58,7 +66,8 @@ of these files as Administrator (right click then choose `Run as Administrator`)
 in case your computer doesn't allow installing program using non-privileged user.
 
 ## Windows 32-bit
-* Download <a href="https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi">Python 2.7+</a>
+* Download <a href="https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi">
+Python 2.7.10</a> or above.
 * Install Python language above. When installing the software, on
 customization option, ensure that you check item "Add python.exe to Path" to
 "Will be installed on local hard drive" (see image below). If you do not enable this option, you
@@ -92,7 +101,7 @@ Ensure you have installed Python setuptools before using the command.
 * Install Mako 0.9 or later (http://www.makotemplates.org/)
 * Install CherryPy 3.2 (http://www.cherrypy.org/)
 * Install Matplotlib 1.3+ (http://matplotlib.org/)
-* Install SymPy 0.7+(http://sympy.org/)
+* Install SymPy 0.7+ (http://sympy.org/)
 * Install Python Routes 1.13+ or 2.0+ (https://pypi.python.org/pypi/Routes)
 * Download **civil-engineering-toolbox** (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
 * Extract and unzip it. Then open terminal and change your directory into it.
