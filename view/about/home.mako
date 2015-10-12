@@ -9,6 +9,7 @@
                     <li><a href="/structure/steel/profile">Steel Section Tables</a></li>
                     <li><a href="/structure/concrete/slab-two-ways">Concrete Two Ways Slab</a></li>
                     <li><a href="/structure/concrete/flexural-analysis">Concrete Flexural Analysis</a></li>
+                    <li><a href="/structure/concrete/shear-design">Concrete Shear Design</a></li>
                     <li><a href="/structure/earthquake/response-spectrum">Response Spectrum</a></li>
                 </ul>
             </li>

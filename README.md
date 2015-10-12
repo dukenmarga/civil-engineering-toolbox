@@ -16,6 +16,7 @@ formula), or just to give quick estimation.
     * Steel Section Table (IWF, Angle)
     * Concrete Two Way Slab
     * Concrete Flexural Analysis
+    * Concrete Shear Design
     * Response Spectrum
 * Geotechnic
     * Surcharge Point Load

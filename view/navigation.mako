@@ -21,6 +21,10 @@
                         <i class=""></i>
                         Concrete Flexural Analysis</a>
                     </li>
+                    <li><a href="/structure/concrete/shear-design">
+                        <i class=""></i>
+                        Concrete Shear Design</a>
+                    </li>
                     <li><a href="/structure/earthquake/response-spectrum">
                         <i class=""></i>
                         Response Spectrum</a>

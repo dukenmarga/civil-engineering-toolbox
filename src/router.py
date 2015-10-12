@@ -24,6 +24,8 @@ def setup():
     a = concrete.Concrete()
     router.connect(name='flexural_analysis', route='/structure/concrete/flexural-analysis',
                    controller=a, action="flexural_analysis")
+    router.connect(name='shear_design', route='/structure/concrete/shear-design',
+                   controller=a, action="shear_design")
     router.connect(name='slab_two_ways_design', route='/structure/concrete/slab-two-ways',
                    controller=a, action="slab_two_ways_design")
     #GEOTECHNIC

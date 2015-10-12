@@ -156,3 +156,51 @@ class Concrete:
             return 0.7
         else:
             return 0.65 + (eps_s-0.002)*250/3
+
+    def Vc(self, fc, concrete_type, height, width, cover, P):
+        if P>=0:
+            k = (1+P/(14*width*height))
+        else:
+            k = (1+0.29*-P/(width*height))
+        d = height-cover
+        return math.sqrt(fc)*width*d*concrete_type*k/6
+
+    def Vs(self, fyr, height, diameter, space, cover, leg):
+        d = height-cover
+        Av = math.pi*diameter**2/4*leg
+        if space == 0 or space == -1:
+            return 0
+        return Av*fyr*d/space
+
+    def shear_space(self, Vu, Vc, fyr, fc, height, width, diameter, cover, leg):
+        d = height-cover
+        phi = 0.75
+        Av = math.pi*diameter**2/4*leg
+        if Vc/2 >= Vu: #Zone 1, no need shear reinforcement
+            s = 0
+            zone = "Zone 1, No need shear reinforcement"
+        elif Vc >= Vu:
+            s1 = 2.85*fyr/width*Av
+            s2 = 16*fyr/(width*math.sqrt(fc))*Av
+            s3 = d/2
+            s4 = 600
+            s = min(s1, s2, s3, s4)
+            zone = "Zone 2, Minimum shear reinforcement."
+            #Av = math.pi*diameter**2/4*leg
+        elif Vu <= Vc + 0.33*math.sqrt(fc)*width*d:
+            Av = math.pi*diameter**2/4*leg
+            s1 = Av*fyr*d/(Vu/phi-Vc)
+            s2 = d/2
+            s3 = 600
+            s = min(s1, s2, s3)
+            zone = "Zone 3, Dense shear reinforcement."
+        elif Vu <= Vc + 0.66*math.sqrt(fc)*width*d:
+            s1 = Av*fyr*d/(Vu/phi-Vc)
+            s2 = d/2
+            s3 = 300
+            s = min(s1, s2, s3)
+            zone = "Zone 4, Denser shear reinforcement."
+        else:
+            s = -1
+            zone = "Zone 5, Profile is too small. Enlarge the section!"
+        return phi, s, zone
