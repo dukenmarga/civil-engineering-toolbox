@@ -69,6 +69,8 @@ class Concrete:
         fyr = float(param.get('fyr') or cookie['fyr'].value)
         fc = float(param.get('fc') or cookie['fc'].value)
         concrete_type = float(param.get('concrete_type') or 1)
+        structure_type = float(param.get('structure_type') or 1)
+        slab_thickness = float(param.get('slab_thickness') or 120)
         height = float(param.get('height') or 400)
         width = float(param.get('width') or 250)
         diameter = float(param.get('diameter') or 10)
@@ -79,13 +81,17 @@ class Concrete:
 
         # Calculate
         Vc = model.Vc(fc, concrete_type, height, width, cover, P)
-        phi, space, zone = model.shear_space(Vu, Vc, fyr, fc, height, width, diameter, cover, leg)
+        phi, space, zone = model.shear_space(Vu, Vc, fyr, fc, height, width,
+                                             diameter, cover, leg, structure_type,
+                                             slab_thickness)
         Vs = model.Vs(fyr, height, diameter, space, cover, leg)
 
         # Prepare data to view
         data = {
             'fc': fc,  #MPa
             'concrete_type': concrete_type,
+            'structure_type': structure_type,
+            'slab_thickness': int(slab_thickness),
             'fyr': int(fyr),  #MPa
             'height': int(height),  #mm
             'width': int(width),  #mm

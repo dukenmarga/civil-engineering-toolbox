@@ -161,7 +161,7 @@ class Concrete:
         if P>=0:
             k = (1+P/(14*width*height))
         else:
-            k = (1+0.29*-P/(width*height))
+            k = (1+0.29*P/(width*height))
         d = height-cover
         return math.sqrt(fc)*width*d*concrete_type*k/6
 
@@ -172,29 +172,46 @@ class Concrete:
             return 0
         return Av*fyr*d/space
 
-    def shear_space(self, Vu, Vc, fyr, fc, height, width, diameter, cover, leg):
+    def shear_space(self, Vu, Vc, fyr, fc, height, width, diameter, cover, leg,
+                    structure_type, slab_thickness):
         d = height-cover
         phi = 0.75
         Av = math.pi*diameter**2/4*leg
-        if Vc/2 >= Vu: #Zone 1, no need shear reinforcement
+        skip_min_shear = False
+
+        if structure_type == 1:
+            if height <= 250:
+                skip_min_shear = True
+        elif structure_type == 2:
+            if (height <= 2.5*slab_thickness or
+                height <= 0.5*width) and \
+                height <= 610:
+                skip_min_shear = True
+        else:
+            skip_min_shear = True
+
+
+        if phi*Vc/2 >= Vu:
             s = 0
             zone = "Zone 1, No need shear reinforcement"
-        elif Vc >= Vu:
+        elif phi*Vc >= Vu and skip_min_shear: #Skip if footing
+            s = 0
+            zone = "Zone 1, No need shear reinforcement"
+        elif phi*Vc >= Vu:
             s1 = 2.85*fyr/width*Av
             s2 = 16*fyr/(width*math.sqrt(fc))*Av
             s3 = d/2
             s4 = 600
             s = min(s1, s2, s3, s4)
             zone = "Zone 2, Minimum shear reinforcement."
-            #Av = math.pi*diameter**2/4*leg
-        elif Vu <= Vc + 0.33*math.sqrt(fc)*width*d:
+        elif Vu <= phi*Vc + 0.33*math.sqrt(fc)*width*d:
             Av = math.pi*diameter**2/4*leg
             s1 = Av*fyr*d/(Vu/phi-Vc)
             s2 = d/2
             s3 = 600
             s = min(s1, s2, s3)
             zone = "Zone 3, Dense shear reinforcement."
-        elif Vu <= Vc + 0.66*math.sqrt(fc)*width*d:
+        elif phi*Vu <= phi*Vc + 0.66*math.sqrt(fc)*width*d:
             s1 = Av*fyr*d/(Vu/phi-Vc)
             s2 = d/2
             s3 = 300
