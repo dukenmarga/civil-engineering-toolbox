@@ -211,7 +211,7 @@ class Concrete:
             s3 = 600
             s = min(s1, s2, s3)
             zone = "Zone 3, Dense shear reinforcement."
-        elif phi*Vu <= phi*Vc + 0.66*math.sqrt(fc)*width*d:
+        elif Vu <= phi*Vc + 0.66*math.sqrt(fc)*width*d:
             s1 = Av*fyr*d/(Vu/phi-Vc)
             s2 = d/2
             s3 = 300
