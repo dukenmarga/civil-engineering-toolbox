@@ -157,13 +157,43 @@ class Concrete:
         else:
             return 0.65 + (eps_s-0.002)*250/3
 
-    def Vc(self, fc, concrete_type, height, width, cover, P):
+    def Vc1(self, fc, concrete_type, height, width, cover, P):
+        '''
+        One way concrete shear capacity
+        :param fc:
+        :param concrete_type:
+        :param height:
+        :param width:
+        :param cover:
+        :param P:
+        :return:
+        '''
         if P>=0:
             k = (1+P/(14*width*height))
         else:
             k = (1+0.29*P/(width*height))
         d = height-cover
         return math.sqrt(fc)*width*d*concrete_type*k/6
+
+    def Vc2(self, fc, concrete_type, column_type, thickness, perimeter, width, length, cover):
+        '''
+        Two way shear concrete shear capacity
+        :param fc:
+        :param concrete_type:
+        :param height:
+        :param width:
+        :param cover:
+        :param P:
+        :return:
+        '''
+        alpha = column_type
+        beta = max(width, length)/min(width, length)
+        d = thickness-cover
+        vc1 = 0.33
+        vc2 = 0.17*(1+2/beta)
+        vc3 = 0.0083*(2+alpha*d/perimeter)
+        Vc = min(vc1, vc2, vc3)*math.sqrt(fc)*concrete_type*perimeter*d
+        return Vc
 
     def Vs(self, fyr, height, diameter, space, cover, leg):
         d = height-cover
@@ -179,16 +209,22 @@ class Concrete:
         Av = math.pi*diameter**2/4*leg
         skip_min_shear = False
 
-        if structure_type == 1:
+        if structure_type == 1: #beam
             if height <= 250:
                 skip_min_shear = True
-        elif structure_type == 2:
+        elif structure_type == 2: #beam integral with slab
             if (height <= 2.5*slab_thickness or
                 height <= 0.5*width) and \
                 height <= 610:
                 skip_min_shear = True
-        else:
-            skip_min_shear = True
+        elif structure_type == 3: #slab or footing
+            if height <= 250:
+                skip_min_shear = True
+        elif structure_type == 4: #one way joist system
+            if height <= 250:
+                skip_min_shear = True
+        else: #handle all values
+            skip_min_shear = False
 
 
         if phi*Vc/2 >= Vu:

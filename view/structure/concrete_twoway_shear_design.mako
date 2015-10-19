@@ -1,22 +1,21 @@
 <%inherit file="../base.mako"/>
 
 <%block name="content">
-    <h4>Concrete Shear Design</h4>
+    <h4>Concrete Two-Way Shear Design</h4>
     <div class="row">
         <div class="col-md-6">
-            <form role="form" action="/structure/concrete/shear-design" method="get">
+            <form role="form" action="/structure/concrete/twoway-shear-design" method="get">
                 ${text("fc", fc, "Concrete strength, $f_c'$", "MPa")}
-                ${select_concrete("concrete_type", concrete_type, "Concrete", "")}
-                ${select_structure("structure_type", structure_type, "Type", "")}
-                ${text("slab_thickness", slab_thickness, "Flange Thickness", "mm")}
                 ${text("fyr", fyr, "Reinf.yield strength ($f_{yr}$)", "MPa")}
-                ${text("height", height, "Height (h)", "mm")}
-                ${text("width", width, "Width (b) or Perimeter (bo)", "mm")}
+                ${select_concrete("concrete_type", concrete_type, "Concrete", "")}
+                ${select_column("column_type", column_type, "Column", "")}
+                ${text("thickness", thickness, "Thickness", "mm")}
+                ${text("perimeter", perimeter, "Perimeter (bo)", "mm")}
+                ${text("width", width, "Width (b)", "mm")}
+                ${text("Length", length, "Length (l)", "mm")}
                 ${text("diameter", diameter, "Diameter (D)", "mm")}
                 ${text("cover", cover, "Cover", "mm")}
-                ${text("leg", leg, "Leg", "")}
                 ${text("Vu", Vu, "Vu", "N")}
-                ${text("P", P, "Axial (+compression, -tension)", "N")}
                 <div class="row">
                     <div class="col-md-6">
                         <input type="submit" class="btn btn-primary" value="Analyze"><br>
@@ -28,10 +27,6 @@
             Vc = ${Vc} N<br>
             $\phi$ = ${phi}<br>
             $\phi$Vc = ${phi*Vc} N<br>
-            Zone = <strong>${zone}</strong><br>
-            Use <strong>Dia ${diameter} @ ${space}</strong> mm<br>
-            Vs = ${Vs} N<br>
-            $\phi$(Vs+Vc) = ${phi*(Vs+Vc)} N<br>
         </div>
     </div>
 </%block>
@@ -69,17 +64,16 @@
     </div>
 </%def>
 
-<%def name="select_structure(name, val, title, unit)">
+<%def name="select_column(name, val, title, unit)">
     <div class="row">
         <div class="col-md-6">
             <label for="${name}">${title}</label>
          </div>
         <div class="col-md-6">
             <select id="${name}" name="${name}" class="">
-                ${option(val, 1, "Beam")}
-                ${option(val, 2, "Beam Integral With Slab")}
-                ${option(val, 3, "Slab or Footing")}
-                ${option(val, 4, "One-Way Joist System")}
+                ${option(val, 40, "Interior Column")}
+                ${option(val, 30, "Edge column")}
+                ${option(val, 20, "Corner column")}
             </select>
         </div>
     </div>

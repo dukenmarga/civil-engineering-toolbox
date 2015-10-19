@@ -56,9 +56,9 @@ class Concrete:
 
         return template.render(**data)
 
-    def shear_design(self, **var):
+    def oneway_shear_design(self, **var):
         # Prepare view & model object
-        template = view.lookup.get_template('structure/concrete_shear_design.mako')
+        template = view.lookup.get_template('structure/concrete_oneway_shear_design.mako')
         model = concrete.Concrete()
 
         # Prepare url params & cookie as default value
@@ -80,7 +80,7 @@ class Concrete:
         P = float(param.get('P') or 0)
 
         # Calculate
-        Vc = model.Vc(fc, concrete_type, height, width, cover, P)
+        Vc = model.Vc1(fc, concrete_type, height, width, cover, P)
         phi, space, zone = model.shear_space(Vu, Vc, fyr, fc, height, width,
                                              diameter, cover, leg, structure_type,
                                              slab_thickness)
@@ -105,6 +105,51 @@ class Concrete:
             'space': int(space),
             'zone': zone,
             'Vs': int(Vs),
+        }
+
+        return template.render(**data)
+    def twoway_shear_design(self, **var):
+        # Prepare view & model object
+        template = view.lookup.get_template('structure/concrete_twoway_shear_design.mako')
+        model = concrete.Concrete()
+
+        # Prepare url params & cookie as default value
+        param = cherrypy.request.params
+        cookie = cherrypy.request.cookie
+
+        # Get url parameter or set default variable (if None)
+        fyr = float(param.get('fyr') or cookie['fyr'].value)
+        fc = float(param.get('fc') or cookie['fc'].value)
+        concrete_type = float(param.get('concrete_type') or 1)
+        column_type = float(param.get('column_type') or 40)
+        thickness = float(param.get('thickness') or 120)
+        perimeter = float(param.get('perimeter') or 500)
+        width = float(param.get('width') or 500)
+        length = float(param.get('length') or 500)
+        diameter = float(param.get('diameter') or 10)
+        cover = float(param.get('cover') or 40)
+        leg = float(param.get('leg') or 2)
+        Vu = float(param.get('Vu') or 20000)
+
+        # Calculate
+        Vc = model.Vc2(fc, concrete_type, column_type, thickness, perimeter, width, length, cover)
+
+        # Prepare data to view
+        data = {
+            'fyr': int(fyr),  #MPa
+            'fc': fc,  #MPa
+            'concrete_type': concrete_type,
+            'column_type': column_type,
+            'thickness': int(thickness),
+            'perimeter': int(perimeter),  #mm
+            'width': int(width),  #mm
+            'length': int(length),  #mm
+            'diameter': int(diameter),  #mm
+            'cover': int(cover),  #mm
+            'leg': int(leg),  #mm
+            'Vu': int(Vu),
+            'phi': 0.75,
+            'Vc': float('{0:.2f}'.format(Vc)),
         }
 
         return template.render(**data)

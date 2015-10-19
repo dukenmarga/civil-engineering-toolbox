@@ -21,9 +21,13 @@
                         <i class=""></i>
                         Concrete Flexural Analysis</a>
                     </li>
-                    <li><a href="/structure/concrete/shear-design">
+                    <li><a href="/structure/concrete/oneway-shear-design">
                         <i class=""></i>
-                        Concrete Shear Design</a>
+                        Concrete One-Way Shear Design</a>
+                    </li>
+                    <li><a href="/structure/concrete/twoway-shear-design">
+                        <i class=""></i>
+                        Concrete Two-Way Shear Design</a>
                     </li>
                     <li><a href="/structure/earthquake/response-spectrum">
                         <i class=""></i>
