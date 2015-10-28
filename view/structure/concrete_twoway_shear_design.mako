@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-md-6">
             <form role="form" action="/structure/concrete/twoway-shear-design" method="get">
-                ${text("fc", fc, "Concrete strength, $f_c'$", "MPa")}
-                ${text("fyr", fyr, "Reinf.yield strength ($f_{yr}$)", "MPa")}
+                ${text("fc", fc, "Concrete strength, f<sub>c</sub>'", "MPa")}
+                ${text("fyr", fyr, "Reinf.yield strength, f<sub>y</sub>", "MPa")}
                 ${select_concrete("concrete_type", concrete_type, "Concrete", "")}
                 ${select_column("column_type", column_type, "Column", "")}
                 ${text("thickness", thickness, "Thickness", "mm")}
@@ -24,9 +24,9 @@
             </form>
         </div>
         <div id='plot' class="col-md-6">
-            Vc = ${Vc} N<br>
-            $\phi$ = ${phi}<br>
-            $\phi$Vc = ${phi*Vc} N<br>
+            Vc = Vc N<br>
+            &phi; = ${phi}<br>
+            &phi;Vc = ${phi*Vc} N<br>
         </div>
     </div>
 </%block>

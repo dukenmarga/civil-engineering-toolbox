@@ -5,11 +5,11 @@
     <div class="row">
         <div class="col-md-6">
             <form role="form" action="/structure/concrete/oneway-shear-design" method="get">
-                ${text("fc", fc, "Concrete strength, $f_c'$", "MPa")}
+                ${text("fc", fc, "Concrete strength, f<sub>c</sub>'", "MPa")}
                 ${select_concrete("concrete_type", concrete_type, "Concrete", "")}
                 ${select_structure("structure_type", structure_type, "Type", "")}
                 ${text("slab_thickness", slab_thickness, "Flange Thickness", "mm")}
-                ${text("fyr", fyr, "Reinf.yield strength ($f_{yr}$)", "MPa")}
+                ${text("fyr", fyr, "Reinf.yield strength, f<sub>y</sub>", "MPa")}
                 ${text("height", height, "Height (h)", "mm")}
                 ${text("width", width, "Width (b) or Perimeter (bo)", "mm")}
                 ${text("diameter", diameter, "Diameter (D)", "mm")}
@@ -26,12 +26,12 @@
         </div>
         <div id='plot' class="col-md-6">
             Vc = ${Vc} N<br>
-            $\phi$ = ${phi}<br>
-            $\phi$Vc = ${phi*Vc} N<br>
+            &phi; = ${phi}<br>
+            &phi;Vc = ${phi*Vc} N<br>
             Zone = <strong>${zone}</strong><br>
             Use <strong>Dia ${diameter} @ ${space}</strong> mm<br>
             Vs = ${Vs} N<br>
-            $\phi$(Vs+Vc) = ${phi*(Vs+Vc)} N<br>
+            &phi;(Vs+Vc) = ${phi*(Vs+Vc)} N<br>
         </div>
     </div>
 </%block>
