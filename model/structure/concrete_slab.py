@@ -6,7 +6,7 @@ class Slab:
 
     def marcus_method(self, ly, lx, t, dl, ll,
                  include_self_weight, kdl, kll,
-                 conc_unit_weight, fc, fus, slab_type,
+                 conc_unit_weight, fc, fyr, slab_type,
                  diameter, dy, dx):
         """ Generate and return steel profile table for H-beam (IWF)
         """
@@ -280,9 +280,9 @@ class Slab:
         # Mnlx
         Mn = Mlx/phi
         Rn = Mn/(1000*(t-dx)**2) #N/mm2
-        m = fus/(0.85*fc)
+        m = fyr/(0.85*fc)
         try:
-            rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
+            rho = 1/m*(1-math.sqrt(1-2*Rn*m/fyr))
         except:
             return self.error(Mlx, Mly, Mtx, Mty,
                               "Change slab thickness!")
@@ -293,9 +293,9 @@ class Slab:
         # Mnly
         Mn = Mly/phi
         Rn = Mn/(1000*(t-dx)**2) #N/mm2
-        m = fus/(0.85*fc)
+        m = fyr/(0.85*fc)
         try:
-            rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
+            rho = 1/m*(1-math.sqrt(1-2*Rn*m/fyr))
         except:
             return self.error(Mlx, Mly, Mtx, Mty,
                               "Change slab thickness!")
@@ -306,9 +306,9 @@ class Slab:
         # Mntx
         Mn = Mtx/phi
         Rn = Mn/(1000*(t-dx)**2) #N/mm2
-        m = fus/(0.85*fc)
+        m = fyr/(0.85*fc)
         try:
-            rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
+            rho = 1/m*(1-math.sqrt(1-2*Rn*m/fyr))
         except:
             return self.error(Mlx, Mly, Mtx, Mty,
                   "Change slab thickness!")
@@ -323,8 +323,8 @@ class Slab:
         except:
             return self.error(Mlx, Mly, Mtx, Mty,
                               "Change slab thickness!")
-        m = fus/(0.85*fc)
-        rho = 1/m*(1-math.sqrt(1-2*Rn*m/fus))
+        m = fyr/(0.85*fc)
+        rho = 1/m*(1-math.sqrt(1-2*Rn*m/fyr))
         rho = max(rho, rho_min)
         As = rho*1000*(t-dx)
         sty = 1000*math.pi*diameter**2/4/As

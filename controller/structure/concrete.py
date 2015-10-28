@@ -174,7 +174,7 @@ class Concrete:
         kll = float(param.get('kll') or 1.6)
         conc_unit_weight = float(param.get('conc_unit_weight') or cookie['conc_unit_weight'].value)
         fc = float(param.get('fc') or cookie['fc'].value)
-        fus = float(param.get('fus') or cookie['fus'].value)
+        fyr = float(param.get('fyr') or cookie['fyr'].value)
         slab_type = param.get('slab_type') or '1'
         diameter = float(param.get('diameter') or 10)
         dy= float(param.get('dy') or 40)
@@ -183,7 +183,7 @@ class Concrete:
         # Calculate
         Mlx, Mly, Mtx, Mty, slx, sly, stx, sty, error = model.marcus_method(
                 ly, lx, t, dl, ll, include_self_weight, kdl, kll,
-                conc_unit_weight, fc, fus, slab_type, diameter, dy, dx)
+                conc_unit_weight, fc, fyr, slab_type, diameter, dy, dx)
 
         # Prepare data to view
         data = {
@@ -197,7 +197,7 @@ class Concrete:
             'kll': kll,
             'conc_unit_weight': conc_unit_weight,
             'fc': fc,
-            'fus': fus,
+            'fyr': fyr,
             'slab_type': slab_type,
             'diameter': diameter,
             'dy': dy,
