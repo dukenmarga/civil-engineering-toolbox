@@ -24,7 +24,7 @@
             </form>
         </div>
         <div id='plot' class="col-md-6">
-            Vc = Vc N<br>
+            Vc = ${Vc} N<br>
             &phi; = ${phi}<br>
             &phi;Vc = ${phi*Vc} N<br>
         </div>
