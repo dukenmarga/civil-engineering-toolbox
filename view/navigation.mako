@@ -46,6 +46,9 @@
                     <li><a href="/geotechnic/surcharge/strip-load">
                         <i class=""></i>
                         Surcharge Strip Load</a></li>
+                    <li><a href="/geotechnic/shallow-foundation/analysis">
+                        <i class=""></i>
+                        Shallow Foundation Analysis</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
