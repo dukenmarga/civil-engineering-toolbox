@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-md-6">
             <form role="form" action="/geotechnic/shallow-foundation/analysis" method="get">
-                ${text("width", width, "Width (b)", "m")}
-                ${text("length", length, "Length (l)", "m")}
+                ${text("width", width, "Width (B)", "m")}
+                ${text("length", length, "Length (L)", "m")}
                 ${text("thick", thick, "Footing Thickness (t)", "m")}
                 ${text("height", height, "Height of Foundation (h)", "m")}
                 ${text("Hx", Hx, "Horizontal Load X", "kg")}
