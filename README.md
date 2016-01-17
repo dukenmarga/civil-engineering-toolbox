@@ -22,6 +22,7 @@ formula), or just to give quick estimation.
 * Geotechnic
     * Surcharge Point Load
     * Surcharge Strip Load
+    * Shallow Foundation Analysis
 * Math
     * Unit Converter (Pressure, Force, Distance)
 
