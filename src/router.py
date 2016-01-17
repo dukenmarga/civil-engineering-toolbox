@@ -3,6 +3,7 @@ from controller.structure import steel_profile
 from controller.structure import earthquake
 from controller.structure import concrete
 from controller.geotechnic import surcharge_load
+from controller.geotechnic import shallow_foundation
 from controller.math import converter
 from controller.about import about
 
@@ -36,6 +37,9 @@ def setup():
                    controller=a, action="point")
     router.connect(name='surcharge_strip', route='/geotechnic/surcharge/strip-load',
                    controller=a, action="strip")
+    a = shallow_foundation.Shallow_Foundation()
+    router.connect(name='shallow_foundation', route='/geotechnic/shallow-foundation/analysis',
+                   controller=a, action="analysis")
     #MATH
     a = converter.Converter()
     router.connect(name='index_converter', route='/math/unit-converter',

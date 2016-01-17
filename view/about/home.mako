@@ -17,9 +17,8 @@
             <li>Geotechnic
                 <ul>
                     <li><a href="/geotechnic/surcharge/point-load">Surcharge Point Load</a></li>
-                </ul>
-                <ul>
                     <li><a href="/geotechnic/surcharge/strip-load">Surcharge Strip Load</a></li>
+                    <li><a href="/geotechnic/shallow-foundation/analysis">Shallow Foundation Analysis</a></li>
                 </ul>
             </li>
             <li>Math
