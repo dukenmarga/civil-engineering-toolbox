@@ -1,4 +1,9 @@
 #civil-engineering-toolbox Changelog
+* 2.1.0
+    * New App: Concrete One-Way Shear Design
+    * New App: Concrete Two-Way Shear Design
+    * New App: Shallow foundation analysis
+    * Remove mathjax
 * 2.0.2
     * Minor  : Fix style and typo
 * 2.0.1

@@ -56,6 +56,104 @@ class Concrete:
 
         return template.render(**data)
 
+    def oneway_shear_design(self, **var):
+        # Prepare view & model object
+        template = view.lookup.get_template('structure/concrete_oneway_shear_design.mako')
+        model = concrete.Concrete()
+
+        # Prepare url params & cookie as default value
+        param = cherrypy.request.params
+        cookie = cherrypy.request.cookie
+
+        # Get url parameter or set default variable (if None)
+        fyr = float(param.get('fyr') or cookie['fyr'].value)
+        fc = float(param.get('fc') or cookie['fc'].value)
+        concrete_type = float(param.get('concrete_type') or 1)
+        structure_type = float(param.get('structure_type') or 1)
+        slab_thickness = float(param.get('slab_thickness') or 120)
+        height = float(param.get('height') or 400)
+        width = float(param.get('width') or 250)
+        diameter = float(param.get('diameter') or 10)
+        cover = float(param.get('cover') or 40)
+        leg = float(param.get('leg') or 2)
+        Vu = float(param.get('Vu') or 20000)
+        P = float(param.get('P') or 0)
+
+        # Calculate
+        Vc = model.Vc1(fc, concrete_type, height, width, cover, P)
+        phi, space, zone = model.shear_space(Vu, Vc, fyr, fc, height, width,
+                                             diameter, cover, leg, structure_type,
+                                             slab_thickness)
+        Vs = model.Vs(fyr, height, diameter, space, cover, leg)
+
+        # Prepare data to view
+        data = {
+            'fc': fc,  #MPa
+            'concrete_type': concrete_type,
+            'structure_type': structure_type,
+            'slab_thickness': int(slab_thickness),
+            'fyr': int(fyr),  #MPa
+            'height': int(height),  #mm
+            'width': int(width),  #mm
+            'diameter': int(diameter),  #mm
+            'cover': int(cover),  #mm
+            'leg': int(leg),  #mm
+            'P': int(P),
+            'Vu': int(Vu),
+            'phi': float('{0:.2f}'.format(phi)),
+            'Vc': float('{0:.2f}'.format(Vc)),
+            'space': int(space),
+            'zone': zone,
+            'Vs': int(Vs),
+        }
+
+        return template.render(**data)
+    def twoway_shear_design(self, **var):
+        # Prepare view & model object
+        template = view.lookup.get_template('structure/concrete_twoway_shear_design.mako')
+        model = concrete.Concrete()
+
+        # Prepare url params & cookie as default value
+        param = cherrypy.request.params
+        cookie = cherrypy.request.cookie
+
+        # Get url parameter or set default variable (if None)
+        fyr = float(param.get('fyr') or cookie['fyr'].value)
+        fc = float(param.get('fc') or cookie['fc'].value)
+        concrete_type = float(param.get('concrete_type') or 1)
+        column_type = float(param.get('column_type') or 40)
+        thickness = float(param.get('thickness') or 120)
+        perimeter = float(param.get('perimeter') or 500)
+        width = float(param.get('width') or 500)
+        length = float(param.get('length') or 500)
+        diameter = float(param.get('diameter') or 10)
+        cover = float(param.get('cover') or 40)
+        leg = float(param.get('leg') or 2)
+        Vu = float(param.get('Vu') or 20000)
+
+        # Calculate
+        Vc = model.Vc2(fc, concrete_type, column_type, thickness, perimeter, width, length, cover)
+
+        # Prepare data to view
+        data = {
+            'fyr': int(fyr),  #MPa
+            'fc': fc,  #MPa
+            'concrete_type': concrete_type,
+            'column_type': column_type,
+            'thickness': int(thickness),
+            'perimeter': int(perimeter),  #mm
+            'width': int(width),  #mm
+            'length': int(length),  #mm
+            'diameter': int(diameter),  #mm
+            'cover': int(cover),  #mm
+            'leg': int(leg),  #mm
+            'Vu': int(Vu),
+            'phi': 0.75,
+            'Vc': float('{0:.2f}'.format(Vc)),
+        }
+
+        return template.render(**data)
+
     def slab_two_ways_design(self, **var):
         # Prepare view & model object
         template = view.lookup.get_template('structure/concrete_slab.mako')
@@ -76,7 +174,7 @@ class Concrete:
         kll = float(param.get('kll') or 1.6)
         conc_unit_weight = float(param.get('conc_unit_weight') or cookie['conc_unit_weight'].value)
         fc = float(param.get('fc') or cookie['fc'].value)
-        fus = float(param.get('fus') or cookie['fus'].value)
+        fyr = float(param.get('fyr') or cookie['fyr'].value)
         slab_type = param.get('slab_type') or '1'
         diameter = float(param.get('diameter') or 10)
         dy= float(param.get('dy') or 40)
@@ -85,7 +183,7 @@ class Concrete:
         # Calculate
         Mlx, Mly, Mtx, Mty, slx, sly, stx, sty, error = model.marcus_method(
                 ly, lx, t, dl, ll, include_self_weight, kdl, kll,
-                conc_unit_weight, fc, fus, slab_type, diameter, dy, dx)
+                conc_unit_weight, fc, fyr, slab_type, diameter, dy, dx)
 
         # Prepare data to view
         data = {
@@ -99,7 +197,7 @@ class Concrete:
             'kll': kll,
             'conc_unit_weight': conc_unit_weight,
             'fc': fc,
-            'fus': fus,
+            'fyr': fyr,
             'slab_type': slab_type,
             'diameter': diameter,
             'dy': dy,

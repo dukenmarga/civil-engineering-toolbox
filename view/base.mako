@@ -27,8 +27,6 @@
         ${js_file("js/jquery-table-sorter.min.js")}
         ${js_file("js/jquery-floatThead.min.js")}
         ${js_file("jquery-ui/jquery-ui.min.js")}
-        ${js_file("mathjax/MathJax.js")}
-        ${js_file("mathjax/TeX-AMS_HTML.js")}
         ${js_file("js/global.js")}
         <%block name="javascript">
         </%block>

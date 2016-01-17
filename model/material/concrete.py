@@ -156,3 +156,104 @@ class Concrete:
             return 0.7
         else:
             return 0.65 + (eps_s-0.002)*250/3
+
+    def Vc1(self, fc, concrete_type, height, width, cover, P):
+        '''
+        One way concrete shear capacity
+        :param fc:
+        :param concrete_type:
+        :param height:
+        :param width:
+        :param cover:
+        :param P:
+        :return:
+        '''
+        if P>=0:
+            k = (1+P/(14*width*height))
+        else:
+            k = (1+0.29*P/(width*height))
+        d = height-cover
+        return math.sqrt(fc)*width*d*concrete_type*k/6
+
+    def Vc2(self, fc, concrete_type, column_type, thickness, perimeter, width, length, cover):
+        '''
+        Two way shear concrete shear capacity
+        :param fc:
+        :param concrete_type:
+        :param height:
+        :param width:
+        :param cover:
+        :param P:
+        :return:
+        '''
+        alpha = column_type
+        beta = max(width, length)/min(width, length)
+        d = thickness-cover
+        vc1 = 0.33
+        vc2 = 0.17*(1+2/beta)
+        vc3 = 0.0083*(2+alpha*d/perimeter)
+        Vc = min(vc1, vc2, vc3)*math.sqrt(fc)*concrete_type*perimeter*d
+        return Vc
+
+    def Vs(self, fyr, height, diameter, space, cover, leg):
+        d = height-cover
+        Av = math.pi*diameter**2/4*leg
+        if space == 0 or space == -1:
+            return 0
+        return Av*fyr*d/space
+
+    def shear_space(self, Vu, Vc, fyr, fc, height, width, diameter, cover, leg,
+                    structure_type, slab_thickness):
+        d = height-cover
+        phi = 0.75
+        Av = math.pi*diameter**2/4*leg
+        skip_min_shear = False
+
+        if structure_type == 1: #beam
+            if height <= 250:
+                skip_min_shear = True
+        elif structure_type == 2: #beam integral with slab
+            if (height <= 2.5*slab_thickness or
+                height <= 0.5*width) and \
+                height <= 610:
+                skip_min_shear = True
+        elif structure_type == 3: #slab or footing
+            if height <= 250:
+                skip_min_shear = True
+        elif structure_type == 4: #one way joist system
+            if height <= 250:
+                skip_min_shear = True
+        else: #handle all values
+            skip_min_shear = False
+
+
+        if phi*Vc/2 >= Vu:
+            s = 0
+            zone = "Zone 1, No need shear reinforcement"
+        elif phi*Vc >= Vu and skip_min_shear: #Skip if footing
+            s = 0
+            zone = "Zone 1, No need shear reinforcement"
+        elif phi*Vc >= Vu:
+            s1 = 2.85*fyr/width*Av
+            s2 = 16*fyr/(width*math.sqrt(fc))*Av
+            s3 = d/2
+            s4 = 600
+            s = min(s1, s2, s3, s4)
+            zone = "Zone 2, Minimum shear reinforcement."
+        elif Vu <= phi*Vc + 0.33*math.sqrt(fc)*width*d:
+            Av = math.pi*diameter**2/4*leg
+            s1 = Av*fyr*d/(Vu/phi-Vc)
+            s2 = d/2
+            s3 = 600
+            s = min(s1, s2, s3)
+            zone = "Zone 3, Dense shear reinforcement."
+        elif Vu <= phi*Vc + 0.66*math.sqrt(fc)*width*d:
+            s1 = Av*fyr*d/(Vu/phi-Vc)
+            s2 = d/2
+            s3 = 300
+            s = min(s1, s2, s3)
+            zone = "Zone 4, Denser shear reinforcement."
+        else:
+            s = -1
+            zone = "Zone 5, Profile is too small. Enlarge the section!"
+        return phi, s, zone

@@ -13,8 +13,8 @@
                 ${row("kdl", kdl, "k*DL", "")}
                 ${row("kll", kll, "k*LL", "")}
                 ${row("conc_unit_weight", conc_unit_weight, "Concrete Mass Weight", "kg/m3")}
-                ${row("fc", fc, "Concrete Strength, $f_c'$", "MPa")}
-                ${row("fus", fus, "Steel Strength, $f_{us}$", "MPa")}
+                ${row("fc", fc, "Concrete Strength, f<sub>c</sub>'", "MPa")}
+                ${row("fyr", fyr, "Steel Strength, f<sub>y</sub>", "MPa")}
                 ${select("slab_type", slab_type, "Slab Type", "")}
                 ${row("diameter", diameter, "Reinforcement Diameter", "mm")}
                 ${row("dy", dy, "dy", "mm")}

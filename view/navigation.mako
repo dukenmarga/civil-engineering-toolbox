@@ -21,6 +21,14 @@
                         <i class=""></i>
                         Concrete Flexural Analysis</a>
                     </li>
+                    <li><a href="/structure/concrete/oneway-shear-design">
+                        <i class=""></i>
+                        Concrete One-Way Shear Design</a>
+                    </li>
+                    <li><a href="/structure/concrete/twoway-shear-design">
+                        <i class=""></i>
+                        Concrete Two-Way Shear Design</a>
+                    </li>
                     <li><a href="/structure/earthquake/response-spectrum">
                         <i class=""></i>
                         Response Spectrum</a>
@@ -38,6 +46,9 @@
                     <li><a href="/geotechnic/surcharge/strip-load">
                         <i class=""></i>
                         Surcharge Strip Load</a></li>
+                    <li><a href="/geotechnic/shallow-foundation/analysis">
+                        <i class=""></i>
+                        Shallow Foundation Analysis</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

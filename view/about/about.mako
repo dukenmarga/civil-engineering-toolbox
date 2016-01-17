@@ -9,7 +9,7 @@
     <p><strong>Website</strong> : <a href="https://github.com/dukenmarga/civil-engineering-toolbox">
             https://github.com/dukenmarga/civil-engineering-toolbox<br />
     </a>
-        <strong>Version</strong> : 2.0.2 (13 Sept 2015)<br />
+        <strong>Version</strong> : 2.1.0 (17 Jan 2016)<br />
         <strong>Programmer:</strong> <a href="http://duken.info">Duken Marga Turnip</a>
     </p>
 </%block>
