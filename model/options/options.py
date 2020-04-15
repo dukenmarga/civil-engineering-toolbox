@@ -22,7 +22,7 @@ class Options:
 
     def set_options(self, kwargs):
         cookie = cherrypy.response.cookie
-        for key, val in kwargs.iteritems():
+        for key, val in kwargs.items():
             cookie[key] = val
             cookie[key]['max-age'] = 60*60*24*365*2  #2 years
             cookie[key]['path'] = "/"

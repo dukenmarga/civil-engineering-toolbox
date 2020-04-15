@@ -2,7 +2,7 @@ import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 import numpy as np
-from cStringIO import StringIO
+from io import BytesIO
 import base64
 
 class Plot:
@@ -12,12 +12,12 @@ class Plot:
         pass
 
     def pcolor(self, x, y, z):
-        img = StringIO()
+        img = BytesIO()
         plt.pcolor(x, y, z)
         plt.colorbar(orientation="horizontal")
         return self.encode_base64(img)
     def line(self, x, y, xlabel="X", ylabel="Y", title="X vs Y"):
-        img = StringIO()
+        img = BytesIO()
         plt.plot(x, y, linewidth=2)
         plt.grid(True)
         plt.xlabel(xlabel)

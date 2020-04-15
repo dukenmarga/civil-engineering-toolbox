@@ -1,4 +1,5 @@
 #civil-engineering-toolbox
+
 **civil-engineering-toolbox** is collection of small programs of
 civil engineering that I built to help me to 
 solve small to medium and common problems when designing something.
@@ -12,6 +13,7 @@ This software can be used as a problem-solver, reminder (through the shown
 formula), or just to give quick estimation.
 
 #Features
+
 * Structure
     * Steel Section Table (IWF, Angle)
     * Concrete Two Way Slab
@@ -24,13 +26,16 @@ formula), or just to give quick estimation.
     * Unit Converter (Pressure, Force, Distance)
 
 #Documentation
+
 You can see the documentation (theories) in <a href="https://github.com/dukenmarga/civil-engineering-toolbox/releases">
 releases</a> page. Although the documentation has not completed yet, at least
 you know what calculation is being performed behind the scene.
 
 #Contribute
+
 You can contribute to make this software better, even if you know nothing about
 programming. Your contribution include:
+
 * Create documentation
 * <a href="https://github.com/dukenmarga/civil-engineering-toolbox/issues/new?title=Fix%20typo%20/%20Ambiguous%20Sentences:%20_your_subject_"
 target="_blank">
@@ -49,6 +54,7 @@ Better numeric algorithm</a>. Please send a detailed explanation.
 * Request for an application (see below for more detailed explanation)
 
 #Request for an Application
+
 If you want to request application, you can 
 <a href="https://github.com/dukenmarga/civil-engineering-toolbox/issues/new?title=Application%20Request:%20_application_name_" target="_blank">
 create a new issue </a> and describe your application.
@@ -59,6 +65,7 @@ Application must be as general as possible and be used by most of civil
 engineers.
 
 #Installation
+
 I'm sorry that there are many steps to go through before you can use this
 software. **civil-engineering-toolbox** depends on some software, especially
 for interpreter, web server and templating. If you are using Windows 7, open all
@@ -66,13 +73,13 @@ of these files as Administrator (right click then choose `Run as Administrator`)
 in case your computer doesn't allow installing program using non-privileged user.
 
 ## Windows 32-bit
-* Download <a href="https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi">
-Python 2.7.10</a> or above.
+* Download <a href="https://www.python.org/ftp/python/3.8.2/python-3.8.2.exe">
+Python 3.8.2</a> or above.
 * Install Python language above. When installing the software, on
 customization option, ensure that you check item "Add python.exe to Path" to
 "Will be installed on local hard drive" (see image below). If you do not enable this option, you
 will not be able to complete the next step. 
-<img src="http://duken.info/cet/img/customize_python.png" align="center" hspace="10" vspace="6">
+<img src="http://dukenmarga.id/cet/img/customize_python.png" align="center" hspace="10" vspace="6">
 * Download **civil-engineering-toolbox** (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
 * Extract and unzip it into one of your directory.
 * Double click `install_windows.cmd`. This script will install required software
@@ -90,6 +97,7 @@ on Windows. So, for you who use Windows 64 bit, you can still install using
 installation guide for 32 bit above.
 
 ## Linux
+
 Due to many variant of Linux distribution, here I will summarize steps to install
 **civil-engineering-toolbox**. I believe that you had already able to use your
 software manager, either by GUI (graphical user interface) or command line from
@@ -110,6 +118,7 @@ Ensure you have installed Python setuptools before using the command.
 * Happy designing :)
 
 #Access From Network (LAN or Internet)
+
 This software can be run in a computer and act as a server to give services
 to client that are connected to the same network with the server.
 In other words, many computer can use the same software that are run only in
@@ -126,6 +135,7 @@ that.
 using that IP_ADDRESS, for example http://IP_ADDRESS:1234
 
 #License
+
 This software is using BSD 3-clause license. In other words, you
 can use, distribute, even sell it without any restriction. But, you
 must include the copyright notice, the license, and the following
