@@ -15,7 +15,9 @@ class Plot:
         img = BytesIO()
         plt.pcolor(x, y, z)
         plt.colorbar(orientation="horizontal")
+        plt.savefig(img, format='png')
         return self.encode_base64(img)
+        
     def line(self, x, y, xlabel="X", ylabel="Y", title="X vs Y"):
         img = BytesIO()
         plt.plot(x, y, linewidth=2)
@@ -26,7 +28,8 @@ class Plot:
         # plt.ylim( (0,x[2]+0.1) )
         # plt.xlim( (0,8.1) )
         return self.encode_base64(img)
+        
     def encode_base64(self, img):
         plt.savefig(img, format='png')
         plt.clf()
-        return base64.encodestring(img.getvalue())
+        return base64.b64encode(img.getvalue())
