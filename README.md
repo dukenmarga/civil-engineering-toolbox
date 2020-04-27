@@ -1,18 +1,14 @@
-#civil-engineering-toolbox
+# civil-engineering-toolbox
 
 **civil-engineering-toolbox** is collection of small programs of
 civil engineering that I built to help me to 
 solve small to medium and common problems when designing something.
-When I try to create programs for practical use, sometimes I will add programs
-that is pure-theory (mathematics) when I'm interested on it.
 
 It is web based application that can be opened in your own browser (offline)
 or can be accessed from other computer if you are connected to LAN (Local Area
 Network).
-This software can be used as a problem-solver, reminder (through the shown
-formula), or just to give quick estimation.
 
-#Features
+# Features
 
 * Structure
     * Steel Section Table (IWF, Angle)
@@ -25,13 +21,13 @@ formula), or just to give quick estimation.
 * Math
     * Unit Converter (Pressure, Force, Distance)
 
-#Documentation
+# Documentation
 
 You can see the documentation (theories) in <a href="https://github.com/dukenmarga/civil-engineering-toolbox/releases">
 releases</a> page. Although the documentation has not completed yet, at least
 you know what calculation is being performed behind the scene.
 
-#Contribute
+# Contribute
 
 You can contribute to make this software better, even if you know nothing about
 programming. Your contribution include:
@@ -53,7 +49,7 @@ target="_blank">
 Better numeric algorithm</a>. Please send a detailed explanation.
 * Request for an application (see below for more detailed explanation)
 
-#Request for an Application
+# Request for an Application
 
 If you want to request application, you can 
 <a href="https://github.com/dukenmarga/civil-engineering-toolbox/issues/new?title=Application%20Request:%20_application_name_" target="_blank">
@@ -64,7 +60,7 @@ review it first before creating it.
 Application must be as general as possible and be used by most of civil
 engineers.
 
-#Installation
+# Installation
 
 I'm sorry that there are many steps to go through before you can use this
 software. **civil-engineering-toolbox** depends on some software, especially
@@ -80,6 +76,7 @@ customization option, ensure that you check item "Add python.exe to Path" to
 "Will be installed on local hard drive" (see image below). If you do not enable this option, you
 will not be able to complete the next step. 
 <img src="http://dukenmarga.id/cet/img/customize_python.png" align="center" hspace="10" vspace="6">
+
 * Download **civil-engineering-toolbox** (https://github.com/dukenmarga/civil-engineering-toolbox/archive/master.zip)
 * Extract and unzip it into one of your directory.
 * Double click `install_windows.cmd`. This script will install required software
@@ -117,7 +114,7 @@ Ensure you have installed Python setuptools before using the command.
 * Open your browser to access http://127.0.0.1:1234
 * Happy designing :)
 
-#Access From Network (LAN or Internet)
+# Access From Network (LAN or Internet)
 
 This software can be run in a computer and act as a server to give services
 to client that are connected to the same network with the server.
@@ -134,7 +131,7 @@ that.
 * civil-engineering-toolbox can be accessed via browser in another computer 
 using that IP_ADDRESS, for example http://IP_ADDRESS:1234
 
-#License
+# License
 
 This software is using BSD 3-clause license. In other words, you
 can use, distribute, even sell it without any restriction. But, you
