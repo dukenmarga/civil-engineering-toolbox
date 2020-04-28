@@ -25,8 +25,8 @@ class Plot:
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)
         plt.title(title)
-        # plt.ylim( (0,x[2]+0.1) )
-        # plt.xlim( (0,8.1) )
+        #plt.ylim( (0,x[2]+0.1) )
+        plt.xlim( (0,8) )
         return self.encode_base64(img)
         
     def encode_base64(self, img):
