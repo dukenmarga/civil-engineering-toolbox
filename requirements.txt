@@ -1,0 +1,6 @@
+routes
+cherrypy
+mako
+numpy
+sympy
+matplotlib
