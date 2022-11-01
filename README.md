@@ -1,5 +1,9 @@
 # civil-engineering-toolbox
 
+### Note 1 Nov 2022:
+This repository will be updated using Flask for a better project framework.
+Heavy changes of migration will be seen in the future commits.
+
 **civil-engineering-toolbox** is collection of small programs of
 civil engineering that I built to help me to 
 solve small to medium and common problems when designing something.
