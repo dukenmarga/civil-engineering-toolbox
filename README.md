@@ -68,7 +68,7 @@ engineers.
 
 You can run this app online with GitHub Codespaces, without installing anything on your computer.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/bilal-rabbani/civil-engineering-toolbox)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dukenmarga/civil-engineering-toolbox)
 
 1. Click the badge above (or **Code → Codespaces → Create codespace on main**).
 2. Wait for the browser-based VS Code editor to load.
