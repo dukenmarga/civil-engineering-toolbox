@@ -64,6 +64,25 @@ review it first before creating it.
 Application must be as general as possible and be used by most of civil
 engineers.
 
+# Run in the Browser (No Installation)
+
+You can run this app online with GitHub Codespaces, without installing anything on your computer.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/bilal-rabbani/civil-engineering-toolbox)
+
+1. Click the badge above (or **Code → Codespaces → Create codespace on main**).
+2. Wait for the browser-based VS Code editor to load.
+3. In the terminal at the bottom, run:
+
+   ```bash
+   pip install flask mako cherrypy matplotlib sympy routes
+   python Main.py
+   ```
+
+4. Click **Open in Browser** when the port popup appears.
+
+> Free GitHub accounts get a monthly allowance of Codespaces hours. Stop the codespace when you're done.
+
 # Installation
 
 I'm sorry that there are many steps to go through before you can use this
